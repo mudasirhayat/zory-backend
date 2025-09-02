@@ -7,10 +7,9 @@ def split_into_chunks(text, max_chars=1000):
     chunks = []
     current = ""
     for line in lines:
-        if len(current) + len(line) < max_chars:
-            current += line + "\n"
-        else:
-            chunks.append(current.strip())
+if len(current) + len(line) < max_chars:
+    current += line + "\n"
+    chunks.append(current.strip())
             current = line + "\n"
     if current:
         chunks.append(current.strip())
