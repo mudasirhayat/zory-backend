@@ -154,10 +154,9 @@ class RecurringPaymentsAPIView(APIView):
 
             transaction_status = payment_response.get("result", {})
 
-            subscription.is_active = False
-            subscription.save(update_fields=["is_active"])
-
-            subscription_end = None
+subscription.is_active = False
+subscription.save(update_fields=["is_active"])
+subscription_end = None
             if plan.duration_type.lower() == "monthly":
                 subscription_end = timezone.now() + timedelta(days=30)
             elif plan.duration_type.lower() == "yearly":
