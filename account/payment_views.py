@@ -215,8 +215,8 @@ class CancelSubscriptionAPIView(APIView):
     def post(self, request):
         subscription = get_object_or_404(UserSubscription, user=request.user, is_active=True)
 
-        subscription.auto_renew = False
-        subscription.save(update_fields=["auto_renew"])
+subscription.auto_renew = False
+subscription.save(update_fields=["auto_renew"])
 
         return {"detail": "success"}
 
