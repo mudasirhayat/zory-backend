@@ -113,11 +113,9 @@ class PaymentStatusAPIView(APIView):
               subscription_end=subscription_end,
               is_active=False,
               auto_renew=False,
-              status='Decline'
-            )
-            raise Exception(f"Transaction failed: {status}")
-
-        return {"transaction_status": status}
+status = 'Decline'
+raise Exception(f"Transaction failed: {status}")
+return {"transaction_status": status}
 
 
 class RecurringPaymentsAPIView(APIView):
