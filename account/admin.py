@@ -4,8 +4,7 @@ from .models.dashboard_user import DashboardUser, UserSubscription
 from .models.payment import Plan, UserPaymentProfile
 
 # Register your models here.
-admin.site.register(User)
-admin.site.register(DashboardUser)
-admin.site.register(Plan)
+models = [User, DashboardUser, Plan]
+admin.site.register(models)
 admin.site.register(UserSubscription)
 admin.site.register(UserPaymentProfile)
