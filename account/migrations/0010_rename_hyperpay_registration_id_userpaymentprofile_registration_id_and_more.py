@@ -15,9 +15,10 @@ class Migration(migrations.Migration):
             old_name='hyperpay_registration_id',
             new_name='registration_id',
         ),
-        migrations.RemoveField(
-            model_name='userpaymentprofile',
-            name='brand',
+migrations.RemoveField(
+    model_name='userpaymentprofile',
+    name='brand',
+    )
         ),
         migrations.RemoveField(
             model_name='userpaymentprofile',
