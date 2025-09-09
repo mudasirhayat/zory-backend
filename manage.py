@@ -12,10 +12,12 @@ def main():
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
-            "available on your PYTHONPATH environment variable? Did you "
-            "forget to activate a virtual environment?"
-        ) from exc
+try:
     execute_from_command_line(sys.argv)
+except ImportError as e:
+    print(f"Error executing command line: {e}")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 
 if __name__ == "__main__":
