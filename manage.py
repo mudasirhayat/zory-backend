@@ -11,9 +11,15 @@ def main():
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
-            "Couldn't import Django. Are you sure it's installed and "
+import sys
+from django.core.management import execute_from_command_line
+
 try:
-    execute_from_command_line(sys.argv)
+    import django
+except ImportError:
+    raise ImportError("Couldn't import Django. Are you sure it's installed?")
+
+execute_from_command_line(sys.argv)
 except ImportError as e:
     print(f"Error executing command line: {e}")
 except Exception as e:
