@@ -20,10 +20,8 @@ class CustomJWTAuthentication(JWTAuthentication):
       jti = token.payload.get("jti")
       if BlacklistedToken.objects.filter(token__jti=jti).exists():
         raise AuthenticationFailed("Token is blacklisted")
-    except Exception:
-      raise AuthenticationFailed(
-        {
-          "detail": "Given token not valid",
+except Exception:
+    raise AuthenticationFailed("Given token not valid")
           "messages": "Token is blacklisted",
         }
       )
