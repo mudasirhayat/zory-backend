@@ -88,9 +88,9 @@ def send_otp_to_dashboard_user(user):
         defaults={"otp_code": otp_code, "expires_at": expiry_time}
     )
 
-    charset = "UTF-8"
-    client = boto3.client("ses", region_name="us-east-2")
-    sender = os.getenv("EMAIL_SENDER")
+charset = "UTF-8"
+client = boto3.client("ses", region_name="us-east-2")
+sender = os.getenv("EMAIL_SENDER")
     recipient = user.email
     subject = "Zory OTP Code"
 
