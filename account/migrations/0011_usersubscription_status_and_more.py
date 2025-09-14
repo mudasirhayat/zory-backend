@@ -17,7 +17,11 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='usersubscription',
-name='auto_renew',
-            field=models.BooleanField(default=False, verbose_name='Auto Renewal', help_text='Check to enable auto renewal'))
+name = 'auto_renew'
+field = models.BooleanField(
+    default=False,
+    verbose_name='Auto Renewal',
+    help_text='Check to enable auto renewal'
+)
         ),
     ]
