@@ -4,8 +4,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+    dependencies = []
 
-    dependencies = [
+    def __init__(self, *args, **kwargs):
+        try:
+            super().__init__(*args, **kwargs)
+        except Exception as e:
+            print(f"Error initializing migration
         ('account', '0004_rename_name_user_name_english_user_name_arabic'),
     ]
 
