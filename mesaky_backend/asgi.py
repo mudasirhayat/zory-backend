@@ -14,6 +14,11 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 from channels.sessions import SessionMiddlewareStack
 from core.routing import websocket_urlpatterns
 
+application = ProtocolTypeRouter({
+    'websocket': SessionMiddlewareStack(
+        URLRouter(
+            websocket_urlpatterns
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mesaky_backend.settings")
 
 application = ProtocolTypeRouter(
