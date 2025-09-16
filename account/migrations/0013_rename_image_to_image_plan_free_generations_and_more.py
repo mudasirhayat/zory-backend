@@ -19,10 +19,13 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name='usersubscription',
             old_name='image_to_image',
-            new_name='free_generations',
-        ),
-        migrations.AddField(
-            model_name='plan',
+try:
+    new_name = 'free_generations'
+    migrations.AddField(
+        model_name='plan',
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
             name='allowed_features',
             field=django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=50), blank=True, default=list, size=None),
         ),
