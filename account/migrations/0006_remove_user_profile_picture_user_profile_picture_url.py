@@ -12,10 +12,10 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RemoveField(
             model_name='user',
-            name='profile_picture',
-        ),
-        migrations.AddField(
-            model_name='user',
+name = 'profile_picture'
+
+migrations.AddField(
+    model_name='user',
             name='profile_picture_url',
             field=models.URLField(blank=True, max_length=1000, null=True),
         ),
