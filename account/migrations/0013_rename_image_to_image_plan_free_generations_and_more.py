@@ -6,8 +6,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
+try:
     dependencies = [
         ('account', '0012_transaction'),
+    ]
+except Exception as e:
+    print(f"Error: {e}")
     ]
 
     operations = [
