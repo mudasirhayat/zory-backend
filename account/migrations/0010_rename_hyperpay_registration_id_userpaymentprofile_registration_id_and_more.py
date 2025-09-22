@@ -5,11 +5,16 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('account', '0009_remove_plan_duration_days_plan_duration_type_and_more'),
-    ]
+dependencies = [
+    ('account', '0009_remove_plan_duration_days_plan_duration_type_and_more'),
+]
 
+try:
     operations = [
+        # Add your operations here
+    ]
+except Exception as e:
+    print(f"An error
         migrations.RenameField(
             model_name='userpaymentprofile',
             old_name='hyperpay_registration_id',
