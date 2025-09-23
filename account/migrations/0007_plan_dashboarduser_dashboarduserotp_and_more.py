@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 ('current_credits', models.IntegerField(default=0)),
                 ('subscription_start', models.DateTimeField(auto_now=True)),
                 ('subscription_end', models.DateTimeField()),
-                ('feature_credits', models.JSONField(default=dict)),
+('feature_credits', models.JSONField(default=dict, null=True)),
                 ('is_active', models.BooleanField(default=True)),
                 ('auto_renew', models.BooleanField(default=True)),
                 ('plan', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='account.plan')),
