@@ -13,10 +13,9 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name="user",
             old_name="name",
-            new_name="name_english",
-        ),
-        migrations.AddField(
-            model_name="user",
+new_name = "name_english"
+migrations.AddField(
+    model_name="user",
             name="name_arabic",
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
