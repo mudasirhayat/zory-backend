@@ -20,11 +20,10 @@ class Migration(migrations.Migration):
                     models.BigAutoField(
                         auto_created=True,
                         primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("password", models.CharField(max_length=128, verbose_name="password")),
+serialize=False,
+    verbose_name="ID",
+),
+("password", models.CharField(max_length=128, verbose_name="password")),
                 (
                     "last_login",
                     models.DateTimeField(
