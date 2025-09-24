@@ -820,8 +820,8 @@ class VerifyDashboardUserOtpAndActivateView(APIView):
     def post(self, request):
         email = request.data.get("email")
         otp = request.data.get("otp")
-
         if not email or not otp:
+            return Response({"error": "Email and OTP are required."}, status=status.HTTP_400_BAD_REQUEST
             return Response({"error": "Email and OTP are required."}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
