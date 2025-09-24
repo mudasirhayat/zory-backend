@@ -3,8 +3,11 @@
 import django.db.models.deletion
 from django.db import migrations, models
 
-
 class Migration(migrations.Migration):
+    def __init__(self, name):
+        super(Migration, self).__init__(name=name)
+
+    def apply(self, project_state
 
     dependencies = [
         ('account', '0013_rename_image_to_image_plan_free_generations_and_more'),
