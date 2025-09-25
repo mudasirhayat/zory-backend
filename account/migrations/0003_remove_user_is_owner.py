@@ -5,11 +5,16 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ("account", "0002_user_is_owner"),
-    ]
+dependencies = [
+    ("account", "0002_user_is_owner"),
+]
 
+try:
     operations = [
+        # Add operations here
+    ]
+except Exception as e:
+    print(f"An error occurred: {e}")
         migrations.RemoveField(
             model_name="user",
             name="is_owner",
