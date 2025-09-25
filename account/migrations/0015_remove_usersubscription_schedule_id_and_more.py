@@ -15,9 +15,9 @@ class Migration(migrations.Migration):
             name='schedule_id',
         ),
         migrations.AddField(
-            model_name='plan',
-            name='description_arabic',
-            field=models.CharField(blank=True, max_length=100),
+model_name = 'plan'
+name = 'description_arabic'
+field = models.CharField(blank=True, max_length=100)
         ),
         migrations.AddField(
             model_name='plan',
