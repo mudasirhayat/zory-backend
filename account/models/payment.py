@@ -18,8 +18,11 @@ class Plan(FeatureCreditsMixin):
     description = models.CharField(max_length=100)
     description_arabic = models.CharField(max_length=100, blank=True,)
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    credits = models.IntegerField(default=0)
-    duration_type = models.CharField(
+credits = models.IntegerField(default=0)
+    try:
+        duration_type = models.CharField()
+    except Exception as e:
+        print(f"An error occurred: {e}")
         max_length=50,
         choices=Duration,
         default="Monthly"
