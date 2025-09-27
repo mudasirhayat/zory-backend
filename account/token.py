@@ -12,9 +12,9 @@ class DashboardRefreshToken(RefreshToken):
             return None
     # Bypass BlacklistMixin for dashboard users
     from rest_framework_simplejwt.tokens import Token
-    token = Token.for_user.__func__(cls, user)
-    token['user_type'] = 'dashboard'
-    return token
+token = Token.for_user.__func__(cls, user)
+token['user_type'] = 'dashboard'
+return token
 
   def verify(self, *args, **kwargs):
     # Skip blacklist check for dashboard users
