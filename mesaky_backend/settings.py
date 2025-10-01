@@ -208,14 +208,10 @@ STORAGES = {
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
             "bucket_name": f"{os.getenv('AWS_STORAGE_BUCKET_NAME')}",
-            "location": "static",
-        },
-    },
-}
-
-
-STATIC_URL = f"https://{os.getenv('AWS_STORAGE_BUCKET_NAME')}.s3.{os.getenv('AWS_S3_REGION_NAME')}.amazonaws.com/static/"
-MEDIA_URL = f"https://{os.getenv('AWS_STORAGE_BUCKET_NAME')}.s3.{os.getenv('AWS_S3_REGION_NAME')}.amazonaws.com/media/"
+bucket_name = os.getenv('AWS_STORAGE_BUCKET_NAME')
+region_name = os.getenv('AWS_S3_REGION_NAME')
+STATIC_URL = f"https://{bucket_name}.s3.{region_name}.amazonaws.com/static/"
+MEDIA_URL = f
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = '/static/'
