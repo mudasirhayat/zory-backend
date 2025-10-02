@@ -186,8 +186,11 @@ class AccountViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
     # Admin Access Tests
-    def test_user_list_view_as_admin(self):
+def test_user_list_view_as_admin(self):
+    try:
         """Test admin can view user list."""
+    except Exception as e:
+        self.fail(f"An error occurred: {str(e)}")
         self.authenticate(user=self.admin)
         response = self.client.get(self.user_list_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
