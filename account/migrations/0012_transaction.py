@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             name='Transaction',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('transaction_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
-                ('agreement_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
+('transaction_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
+('agreement_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('plan', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='account.plan')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='account.dashboarduser')),
