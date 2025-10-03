@@ -16,9 +16,12 @@ class Migration(migrations.Migration):
             field=models.CharField(choices=[('Completed', 'completed'), ('Decline', 'decline'), ('In Progress', 'in progress')], default='In Progress', max_length=50),
         ),
         migrations.AlterField(
-            model_name='usersubscription',
-name = 'auto_renew'
-field = models.BooleanField(
+try:
+    model_name = 'usersubscription'
+    name = 'auto_renew'
+    field = models.BooleanField()
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
     default=False,
     verbose_name='Auto Renewal',
     help_text='Check to enable auto renewal'
