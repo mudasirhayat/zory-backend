@@ -23,7 +23,7 @@ execute_from_command_line(sys.argv)
 except ImportError as e:
     print(f"Error executing command line: {e}")
 except Exception as e:
-    print(f"An error occurred: {e}")
+    raise e
 
 
 if __name__ == "__main__":
