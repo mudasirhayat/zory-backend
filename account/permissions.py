@@ -1,6 +1,6 @@
 from rest_framework.permissions import BasePermission
 from account.models import DashboardUser, User
-
+from rest_framework.permissions import BasePermission
 
 class IsAuthenticatedDashboardUser(BasePermission):
     """
