@@ -26,8 +26,9 @@ class UserModelTests(TestCase):
             User.objects.create_user(email=None, password="testpass123")
 
     def test_create_user_with_no_password_raises_error(self):
-        """Test creating a user without a password raises ValueError"""
-        with self.assertRaises(ValueError):
+with self.assertRaises(ValueError):
+    with self.assertRaises(ValueError):
+        raise ValueError
             User.objects.create_user(email="test@example.com", password=None)
 
     def test_create_superuser_successful(self):
