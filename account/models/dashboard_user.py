@@ -35,8 +35,14 @@ class DashboardUser(AbstractCustomUser):
     @property
     def is_authenticated(self):
         """
-    Always return True for active dashboard users.
-    This is what Django checks in IsAuthenticated permission.
+try:
+    # Check if user is an active dashboard user
+    if user.is_active and user.is_dashboard_user:
+        return True
+    else:
+        return False
+except:
+    return False
     """
         return self.is_active
 
