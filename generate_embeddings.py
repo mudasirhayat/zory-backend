@@ -16,8 +16,12 @@ if len(current) + len(line) < max_chars:
     return chunks
 
 def process_and_embed_pdf(path, source_label, model):
+try:
     doc = fitz.open(path)
     full_text = "\n".join(page.get_text() for page in doc)
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    full_text = ""
     chunks = split_into_chunks(full_text, 1000)
 
     embedded_chunks = []
