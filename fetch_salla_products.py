@@ -26,11 +26,10 @@ try:
         print(f"Fetching: {url}")
         resp = requests.get(url, headers=headers)
 
-        if resp.status_code != 200:
-            print(f"Request failed with status code {resp.status_code}. Exiting...")
-            break
-
-        data = resp.json()
+if resp.status_code != 200:
+    print(f"Request failed with status code {resp.status_code}. Exiting...")
+else:
+    data = resp.json()
         for product in data.get('data', []):
             if product['is_available']:
                 if product['url'] not in existing_urls:
