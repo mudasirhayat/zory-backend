@@ -19,9 +19,12 @@ class StartSubscriptionView(APIView):
     permission_classes = [IsAuthenticatedDashboardUser]
 
     @exception_handler()
-    def post(self, request):
+def post(self, request):
+    try:
         plan_id = request.data.get('plan_id')
         billing_info = request.data.get('billing_info')
+    except KeyError:
+        return Response({'error': 'Invalid request data'}, status=status.HTTP_
 
         plan = get_object_or_404(Plan, id=plan_id)
 
