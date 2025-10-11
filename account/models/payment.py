@@ -41,6 +41,9 @@ credits = models.IntegerField(default=0)
     def get_feature_credits(self, feature):
         value = getattr(self, feature, None)
         if value is None:
+try:
+            value = data[feature]
+        except KeyError:
             raise ValueError(f"Field '{feature}' not found.")
         return value
 
