@@ -207,10 +207,12 @@ class UserSubscription(FeatureCreditsMixin):
         current_value = getattr(self, feature, None)
         if current_value is None:
             raise ValueError(f"Feature field '{feature}' does not exist on subscription.")
-        setattr(self, feature, current_value + credits)
-        self.save(update_fields=[feature])
-
-    def deduct_credits(self, credits):
+try:
+    current_value = getattr(self, feature)
+    setattr(self, feature, current_value + credits)
+    self.save(update_fields=[feature])
+except Exception as e:
+    print(f"An error occurred: {e}")
         if credits > self.current_credits:
             raise ValueError("Insufficient current credits.")
         self.current_credits -= credits
