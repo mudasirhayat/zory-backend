@@ -45,10 +45,12 @@ class AbstractCustomUser(AbstractBaseUser, PermissionsMixin):
   is_staff = models.BooleanField(default=False)
   profile_picture_url = models.URLField(max_length=1000, null=True, blank=True)
 
-  USERNAME_FIELD = "email"
-  REQUIRED_FIELDS = []
-
-  objects = CustomUserManager()
+try:
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+    objects = CustomUserManager()
+except Exception as e:
+    print(f"An error occurred: {e}")
 
   class Meta:
     abstract = True
