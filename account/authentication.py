@@ -11,10 +11,12 @@ class CustomJWTAuthentication(JWTAuthentication):
     result = super().authenticate(request)
 
     if result is None:
-      return None
-
+try:
     user, token = result
     user_type = token.payload.get('user_type', 'regular')
+except (ValueError, KeyError, AttributeError):
+    user = None
+    user_type = 'regular'
 
     try:
       jti = token.payload.get("jti")
