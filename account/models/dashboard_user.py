@@ -222,8 +222,8 @@ except Exception as e:
         self.free_generations -= 1
         self.save(update_fields=['free_generations'])
 
-    def get_usage_credits(self, feature):
-        value = getattr(self, feature, None)
-        if value is None:
+def get_usage_credits(self, feature):
+    value = getattr(self, feature, None)
+    if value is None:
             raise ValueError(f"Field '{feature}' not found.")
         return value
