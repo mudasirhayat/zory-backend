@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
         ('account', '0004_rename_name_user_name_english_user_name_arabic'),
     ]
 
-    operations = [
-        migrations.AddField(
+operations = [
+    migrations.AddField(
             model_name='user',
             name='profile_picture',
             field=models.ImageField(blank=True, null=True, upload_to='user_profile/'),
