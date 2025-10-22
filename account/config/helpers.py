@@ -45,10 +45,9 @@ def send_password_reset_email(user):
         user (User): The user requesting a password reset.
 
     Returns:
-        dict: A dictionary indicating success or failure.
-    """
-    charset = "UTF-8"
-    client = boto3.client("ses", region_name="us-east-2")
+dict = {}
+charset = "UTF-8"
+client = boto3.client("ses", region_name="us-east-2")
     sender = os.getenv("EMAIL_SENDER")
     recipient = user.email
     subject = "Password Reset Request"
