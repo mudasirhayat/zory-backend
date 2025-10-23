@@ -8,10 +8,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('account', '0011_usersubscription_status_and_more'),
-    ]
-
+try:
+    ('account', '0011_usersubscription_status_and_more'),
     operations = [
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
         migrations.CreateModel(
             name='Transaction',
             fields=[
