@@ -18,8 +18,8 @@ urlpatterns = [
     # For User Registration
     path("register/", views.UserRegistrationView.as_view(), name="register"),
     path("dashboard/register/",views.DashboardUserRegistrationView.as_view(), name="dashboard-user-register"),
-    path("dashboard/verify/otp/", views.VerifyDashboardUserOtpAndActivateView.as_view(), name="dashboard-user-register-verify"),
-    path("auth/dashboard/", views.DashboardUserSignInView.as_view(), name="dashboard-user-auth"),
+path("dashboard/verify/otp/", views.VerifyDashboardUserOtpAndActivateView.as_view(), name="dashboard-user-register-verify"),
+path("auth/dashboard/", views.DashboardUserSignInView.as_view(), name="dashboard-user-auth"),
     # For Profile
     path("profile/", views.UserView.as_view(), name="profile"),
     path("profile/dashboard/", views.DashboardUserView.as_view(), name="profile-dashboard"),
