@@ -17,9 +17,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
 model_name = 'plan'
 name = 'description_arabic'
-field = models.CharField(blank=True, max_length=100)
-        ),
-        migrations.AddField(
+field = models.CharField(
+    blank=True,
+    max_length=100
+)
+migrations.AddField(
             model_name='plan',
             name='metadata_arabic',
             field=models.JSONField(blank=True, default=dict),
