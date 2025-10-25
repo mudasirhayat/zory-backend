@@ -12,8 +12,10 @@ try:
     ('account', '0011_usersubscription_status_and_more'),
     operations = [
 except Exception as e:
+try:
+    migrations.CreateModel(
+except Exception as e:
     print(f"An error occurred: {str(e)}")
-        migrations.CreateModel(
             name='Transaction',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
