@@ -9,9 +9,8 @@ all_products = []
 # Load existing products if the file exists
 file_path = 'mesaky_salla_products.json'
 if os.path.exists(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        try:
-            all_products = json.load(f)
+with open(file_path, 'r', encoding='utf-8') as file:
+    all_products = json.load(file)
         except json.JSONDecodeError:
             all_products = []
 
