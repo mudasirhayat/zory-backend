@@ -637,9 +637,10 @@ class LogoutView(APIView):
             # Get the token from the Authorization header
             auth_header = request.headers.get("Authorization", "")
             if not auth_header.startswith("Bearer "):
-                return Response(
-                    {"error": "Invalid authorization header format",
-                     "errorArabic": "Invalid authorization header format"},
+return Response({
+    "error": "Invalid authorization header format",
+    "errorArabic": "Invalid authorization header format"
+})
                     status=status.HTTP_400_BAD_REQUEST,
                 )
 
