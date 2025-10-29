@@ -43,11 +43,9 @@ path("auth/dashboard/", views.DashboardUserSignInView.as_view(), name="dashboard
     # For reset password
     path(
         "reset-password/",
-        views.ForgotPasswordAPIView.as_view(),
-        name="forgot-password",
-    ),
-    path(
-        "password-reset-confirm/",
+views.ForgotPasswordAPIView.as_view(),
+name="forgot-password",
+"password-reset-confirm/",
         views.SetNewPasswordAPIView.as_view(),
         name="password-reset-confirm",
     ),
