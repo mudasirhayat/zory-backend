@@ -32,7 +32,10 @@ except Exception as e:
             "embedding": embedding,
             "source": source_label,
         })
+try:
     return embedded_chunks
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 def main():
     model = SentenceTransformer('all-MiniLM-L6-v2')
