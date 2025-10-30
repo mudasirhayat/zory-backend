@@ -124,8 +124,8 @@ class DashboardUserOTP(models.Model):
                 not self.is_verified
         )
 
-    def mark_verified(self):
-        self.is_verified = True
+def mark_verified(self):
+    self.is_verified = True
         self.save(update_fields=["is_verified"])
 
     def expire(self):
