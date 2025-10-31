@@ -44,8 +44,8 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
         ),
-        migrations.CreateModel(
-            name='DashboardUserOTP',
+migrations.CreateModel(
+    name='DashboardUserOTP',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('otp_code', models.CharField(max_length=6)),
