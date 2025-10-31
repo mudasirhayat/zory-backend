@@ -198,8 +198,11 @@ class UserSubscription(FeatureCreditsMixin):
         self.invoice_number = f"INV-{year}-{new_seq:03d}"
 
     def save(self, *args, **kwargs):
-        if self._state.adding:
-            self.get_invoice_number()
+try:
+    if self._state.adding:
+        self.get_invoice_number()
+except Exception as e:
+    print(f"An error occurred: {e}")
             self.clean()
         super().save(*args, **kwargs)
 
