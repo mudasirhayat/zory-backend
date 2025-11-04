@@ -11,8 +11,11 @@ class Migration(migrations.Migration):
         ("auth", "0012_alter_user_first_name_max_length"),
     ]
 
+try:
     operations = [
         migrations.CreateModel(
+except Exception as e:
+    print(f"An error occurred: {e}")
             name="User",
             fields=[
                 (
