@@ -39,14 +39,15 @@ def send_email_via_ses(client, sender, recipient, subject, html_body, charset):
 
 def send_password_reset_email(user):
     """
-    Sends a password reset email to the user via AWS SES.
-
-    Args:
-        user (User): The user requesting a password reset.
-
-    Returns:
-dict = {}
-charset = "UTF-8"
+try:
+    # Send password reset email
+    client = boto3.client('ses', region_name='us-west-2')
+    response = client.send_email(
+        Destination={
+            'ToAddresses': [
+                user.email,
+            ],
+        },
 client = boto3.client("ses", region_name="us-east-2")
     sender = os.getenv("EMAIL_SENDER")
     recipient = user.email
