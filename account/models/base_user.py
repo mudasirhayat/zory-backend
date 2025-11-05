@@ -41,8 +41,8 @@ class AbstractCustomUser(AbstractBaseUser, PermissionsMixin):
   name_arabic = models.CharField(max_length=255, null=True, blank=True)
   name_english = models.CharField(max_length=255, null=True, blank=True)
   email = models.EmailField(unique=True)
-  is_active = models.BooleanField(default=True)
-  is_staff = models.BooleanField(default=False)
+is_active = models.BooleanField(default=True, null=False)
+is_staff = models.BooleanField(default=False, null=False)
   profile_picture_url = models.URLField(max_length=1000, null=True, blank=True)
 
 try:
