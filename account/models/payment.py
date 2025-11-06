@@ -51,10 +51,7 @@ try:
       Check if a given feature is allowed in this plan.
       """
         # Normalize both sides to avoid case mismatches
-        return feature_name.lower() in [f.lower() for f in self.allowed_features]
-
-
-class UserPaymentProfile(models.Model):
+return feature_name.lower() in [f.lower() for f in self.allowed_features]
     user = models.OneToOneField('DashboardUser', on_delete=models.CASCADE, related_name='payment_profile')
     registration_id = models.CharField(max_length=128, blank=True, null=True)
     updated_at = models.DateTimeField(auto_now=True)
