@@ -2,7 +2,10 @@ import os
 import requests
 from django.conf import settings
 
-HYPERPAY_URL = settings.HYPERPAY_URL
+try:
+    HYPERPAY_URL = settings.HYPERPAY_URL
+except AttributeError:
+    HYPERPAY_URL = None
 ENTITY_ID_3DS = settings.ENTITY_ID_3DS
 ENTITY_ID = settings.ENTITY_ID
 AUTH_TOKEN = settings.AUTH_TOKEN
