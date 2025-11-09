@@ -9,7 +9,6 @@ except Exception as e:
 from .models.payment import Plan, UserPaymentProfile
 
 # Register your models here.
-models = [User, DashboardUser, Plan]
-admin.site.register(models)
+admin.site.register([User, DashboardUser, Plan])
 admin.site.register(UserSubscription)
 admin.site.register(UserPaymentProfile)
