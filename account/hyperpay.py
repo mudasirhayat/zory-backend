@@ -91,10 +91,8 @@ def recurring_payment(transaction, registration_id, amount, currency):
 
     headers = {"Authorization": f"Bearer {AUTH_TOKEN}"}
     r = requests.post(url, data=data, headers=headers)
-    return r.json()
-
-
 def transaction_report(registration_id):
+    return r.json()
     url = f"{HYPERPAY_URL}/v3/query/{registration_id}"
     url += f'?entityId={ENTITY_ID_3DS}'
 
