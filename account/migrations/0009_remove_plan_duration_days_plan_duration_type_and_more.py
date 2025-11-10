@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
             model_name='plan',
             name='duration_days',
         ),
-        migrations.AddField(
-            model_name='plan',
+migrations.AddField(
+    model_name='plan',
             name='duration_type',
             field=models.CharField(choices=[('Monthly', 'monthly'), ('Yearly', 'yearly'), ('One Time Plan', 'one time plan')], default='Monthly', max_length=50),
         ),
