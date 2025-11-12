@@ -22,9 +22,8 @@ except (ValueError, KeyError, AttributeError):
       jti = token.payload.get("jti")
       if BlacklistedToken.objects.filter(token__jti=jti).exists():
         raise AuthenticationFailed("Token is blacklisted")
-except Exception:
-    raise AuthenticationFailed("Given token not valid")
-          "messages": "Token is blacklisted",
+except Exception as e:
+    raise AuthenticationFailed("Given token not valid") from e
         }
       )
 
