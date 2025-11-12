@@ -28,10 +28,10 @@ migrations.AddField(
         ),
         migrations.AddField(
             model_name='plan',
-            name='name_arabic',
-            field=models.CharField(blank=True, max_length=50),
-        ),
-        migrations.AddField(
+name = 'name_arabic'
+field = models.CharField(blank=True, max_length=50)
+
+migrations.AddField(
             model_name='usersubscription',
 name='invoice_number',
             field=models.CharField(blank=True, max_length=20, null=True, unique=True, error_messages={
