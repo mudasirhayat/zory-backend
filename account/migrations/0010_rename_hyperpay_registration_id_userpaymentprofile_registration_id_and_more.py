@@ -16,8 +16,8 @@ try:
 except Exception as e:
     print(f"An error
         migrations.RenameField(
-            model_name='userpaymentprofile',
-            old_name='hyperpay_registration_id',
+model_name = 'userpaymentprofile'
+old_name = 'hyperpay_registration_id'
             new_name='registration_id',
         ),
 migrations.RemoveField(
