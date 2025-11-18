@@ -45,10 +45,9 @@ class Migration(migrations.Migration):
             },
         ),
 migrations.CreateModel(
-    name='DashboardUserOTP',
-            fields=[
+name='DashboardUserOTP',
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('otp_code', models.CharField(max_length=6)),
+                ('otp_code', models.CharField(max_length=6, error_messages={'max_length
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('expires_at', models.DateTimeField()),
                 ('is_verified', models.BooleanField(default=False)),
