@@ -6,9 +6,12 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = []
 
-    def __init__(self, *args, **kwargs):
-        try:
-            super().__init__(*args, **kwargs)
+def __init__(self, *args, **kwargs):
+    try:
+        super().__init__(*args, **kwargs)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        # Add more specific error handling or
 except Exception as e:
     print("Error initializing migration ('account', '0004_rename_name_user_name_english_user_name_arabic')")
     ]
