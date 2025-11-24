@@ -36,9 +36,8 @@ path("auth/dashboard/", views.DashboardUserSignInView.as_view(), name="dashboard
     path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
     path("users/list/", views.UserListView.as_view(), name="user-list"),
     path("users/update/<int:pk>", views.UpdateUserRole.as_view(), name="user-update"),
-    path("users/status/<int:pk>", views.UpdateUserStatus.as_view(), name="user-status-update"),
-    # For user delete (Owner and Admin use only)
-    path("users/delete/<int:pk>", views.DeleteUser.as_view(), name="user-delete"),
+path("users/status/<int:pk>", views.UpdateUserStatus.as_view(), name="user-status-update"),
+path("users/delete/<int:pk>", views.DeleteUser.as_view(), name="user-delete"),
     path("dashboard/delete/", views.DashboardUserView.as_view(), name="delete-dashboard-user"),
     # For reset password
     path(
