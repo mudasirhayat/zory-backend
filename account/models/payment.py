@@ -15,7 +15,7 @@ class Plan(FeatureCreditsMixin):
 
 name = models.CharField(max_length=50)
 name_arabic = models.CharField(max_length=50, blank=True)
-    description = models.CharField(max_length=100)
+description = models.CharField(max_length=100)
     description_arabic = models.CharField(max_length=100, blank=True,)
     price = models.DecimalField(max_digits=8, decimal_places=2)
 credits = models.IntegerField(default=0)
