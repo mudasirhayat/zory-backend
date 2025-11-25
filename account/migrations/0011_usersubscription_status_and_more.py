@@ -5,8 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
+try:
     dependencies = [
         ('account', '0010_rename_hyperpay_registration_id_userpaymentprofile_registration_id_and_more'),
+    ]
+except Exception as e:
+    print(f"An error occurred: {e}")
     ]
 
     operations = [
