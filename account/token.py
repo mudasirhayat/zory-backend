@@ -7,6 +7,7 @@ class DashboardRefreshToken(RefreshToken):
     @classmethod
     def for_user(cls, user):
         try:
+        try:
             return cls.objects.get(user=user)
         except cls.DoesNotExist:
             return None
