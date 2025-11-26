@@ -21,6 +21,9 @@ class UserSubscriptionSerializer(serializers.ModelSerializer):
             'subscription_start',
             'subscription_end',
             'feature_credits',
-            'is_active',
-            'auto_renew',
+try:
+    'is_active',
+    'auto_renew',
+except Exception as e:
+    print(f"An error occurred: {e}")
         ]
