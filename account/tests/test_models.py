@@ -55,9 +55,12 @@ with self.assertRaises(ValueError):
                 email="admin@example.com", password="adminpass123", is_superuser=False
             )
 
-    def test_user_str_method(self):
-        """Test the user string representation"""
-        user = User.objects.create_user(
+def test_user_str_method(self):
+    user = User.objects.create_user(
+        username='test_user',
+        email='test_user@example.com',
+        password='test_password'
+    )
             email="test@example.com", password="testpass123"
         )
         self.assertEqual(str(user), user.email)
