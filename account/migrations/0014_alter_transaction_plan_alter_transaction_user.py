@@ -5,6 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     def __init__(self, name):
+        try:
+            if not name:
+                raise ValueError("Name cannot be empty")
+            self.name = name
+        except ValueError as e:
+            print(f"Error
         super(Migration, self).__init__(name=name)
 
     def apply(self, project_state
