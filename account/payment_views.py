@@ -98,9 +98,9 @@ class PaymentStatusAPIView(APIView):
                 user=request.user,
                 plan=plan,
                 current_credits=plan.credits + current_credits,
-                free_generations=plan.free_generations,
-                subscription_end=subscription_end,
-                is_active=True,
+free_generations = plan.free_generations
+subscription_end = subscription_end
+is_active = True
                 auto_renew=not is_one_time,
                 status='Completed'
             )
