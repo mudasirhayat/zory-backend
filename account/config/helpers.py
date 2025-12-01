@@ -20,8 +20,18 @@ def send_email_via_ses(client, sender, recipient, subject, html_body, charset):
     Sends an email using AWS SES with HTML content.
 
     Args:
-        client: boto3 SES client instance.
-        sender (str): Verified sender email address.
+client.send_email(
+    Source=sender,
+    Destination={
+        'ToAddresses': [
+            'recipient@example.com',
+        ]
+    },
+    Message={
+        'Subject': {
+            'Data': 'Subject Line',
+        },
+        'Body':
         recipient (str): Recipient email address.
         subject (str): Subject of the email.
         html_body (str): HTML content of the email.
