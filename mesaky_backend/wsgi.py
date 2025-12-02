@@ -1,9 +1,15 @@
 """
 WSGI config for mesaky_backend project.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
+import falcon
 
-For more information on this file, see
+class Resource:
+    def on_get(self, req, resp):
+        resp.status = falcon.HTTP_200
+        resp.body = 'Hello, world!'
+
+app = falcon.API()
+app.add_route('/',
 https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
 """
 
