@@ -29,8 +29,8 @@ migrations.AddField(
             name='sketch_to_render',
             field=models.IntegerField(default=0),
         ),
-        migrations.AddField(
-            model_name='usersubscription',
+migrations.AddField(
+    model_name='usersubscription',
             name='sketch_to_render',
             field=models.IntegerField(default=0),
         ),
