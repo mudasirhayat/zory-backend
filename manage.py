@@ -21,10 +21,9 @@ except ImportError:
 
 execute_from_command_line(sys.argv)
 except ImportError as e:
-    print(f"Error executing command line: {e}")
-except Exception as e:
-    raise e
-
-
 if __name__ == "__main__":
+    try:
+        # code block
+    except Exception as e:
+        print(f"Error executing command line: {e}")
     main()
