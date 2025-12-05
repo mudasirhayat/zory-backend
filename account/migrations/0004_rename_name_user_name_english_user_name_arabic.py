@@ -4,8 +4,9 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = []
+    dependencies = [
         ("account", "0003_remove_user_is_owner"),
+    ]
     ]
 
     operations = [
