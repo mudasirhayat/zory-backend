@@ -14,9 +14,9 @@ except Exception as e:
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='usersubscription',
-            name='status',
+migrations.AddField(
+    model_name='usersubscription',
+    name='status',
             field=models.CharField(choices=[('Completed', 'completed'), ('Decline', 'decline'), ('In Progress', 'in progress')], default='In Progress', max_length=50),
         ),
         migrations.AlterField(
