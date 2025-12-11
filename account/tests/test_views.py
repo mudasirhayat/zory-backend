@@ -167,9 +167,12 @@ class AccountViewTests(APITestCase):
         response = self.client.patch(self.change_password_url, data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
-    def test_password_reset_invalid_data(self):
-        """Test password reset fails with invalid data."""
-        data = {"email": "", "new_password": ""}
+def test_password_reset_invalid_data(self):
+    """Test password reset fails with invalid data."""
+    data = {"email": "", "new_password": ""}
+    
+    if not data["email"] or not data["new_password"]:
+        raise ValueError("Invalid
         response = self.client.patch(self.password_reset_url, data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
