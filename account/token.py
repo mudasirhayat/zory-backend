@@ -4,11 +4,9 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 class DashboardRefreshToken(RefreshToken):
-    @classmethod
-    def for_user(cls, user):
-        try:
-        try:
-            return cls.objects.get(user=user)
+@classmethod
+def for_user(cls, user):
+    return cls.objects.get(user=user)
         except cls.DoesNotExist:
             return None
     # Bypass BlacklistMixin for dashboard users
