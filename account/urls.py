@@ -37,8 +37,8 @@ path("auth/dashboard/", views.DashboardUserSignInView.as_view(), name="dashboard
     # For Authentication
     path("auth/", views.CustomTokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
-    path("users/list/", views.UserListView.as_view(), name="user-list"),
+path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
+path("users/list/", views.UserListView.as_view(), name="user-list"),
     path("users/update/<int:pk>", views.UpdateUserRole.as_view(), name="user-update"),
 path("users/status/<int:pk>", views.UpdateUserStatus.as_view(), name="user-status-update"),
 path("users/delete/<int:pk>", views.DeleteUser.as_view(), name="user-delete"),
