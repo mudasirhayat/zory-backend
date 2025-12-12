@@ -10,10 +10,7 @@ class Plan(FeatureCreditsMixin):
     Duration = [
         ("Monthly", "monthly"),
         ("Yearly", "yearly"),
-        ("One Time Plan", "one time plan")
-    ]
-
-name = models.CharField(max_length=50)
+name = models.CharField(max_length=50, choices=(("One Time Plan", "One Time Plan"),))
 name_arabic = models.CharField(max_length=50, blank=True)
 description = models.CharField(max_length=100)
     description_arabic = models.CharField(max_length=100, blank=True,)
