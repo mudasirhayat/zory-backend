@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
         ("account", "0003_remove_user_is_owner"),
     ]
     ]
+    ]
 
     operations = [
         migrations.RenameField(
