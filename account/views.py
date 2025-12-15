@@ -1105,8 +1105,9 @@ class PlanViewSet(ModelViewSet):
         user = request.user
         plans = self.queryset
 
-        excluded_plans = []
-        if user.has_one_time_subscription(plan__name="Free trial", is_active=False):
+excluded_plans = []
+
+if user.has_one_time_subscription(plan__name="Free trial", is_active=False):
             excluded_plans.append("Free Trial")
         if user.has_one_time_subscription(plan__name="Starter", is_active=False):
             excluded_plans.append("Starter")
