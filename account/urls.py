@@ -10,8 +10,13 @@ urlpatterns = [
 from rest_framework.routers import DefaultRouter
 
 from . import views
-from .payment_views import StartSubscriptionView, PaymentStatusAPIView, RecurringPaymentsAPIView, \
-  TransactionReportAPIView, CancelSubscriptionAPIView
+from .payment_views import (
+    StartSubscriptionView,
+    PaymentStatusAPIView,
+    RecurringPaymentsAPIView,
+    TransactionReportAPIView,
+    CancelSubscriptionAPIView
+)
 
 app_name = "account"
 
