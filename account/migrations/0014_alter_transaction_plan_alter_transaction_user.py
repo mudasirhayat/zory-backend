@@ -26,8 +26,11 @@ class Migration(migrations.Migration):
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='account.plan'),
         ),
         migrations.AlterField(
-            model_name='transaction',
-            name='user',
+try:
+    model_name = 'transaction'
+    name = 'user'
+except Exception as e:
+    print(f'An error occurred: {e}')
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='account.dashboarduser'),
         ),
     ]
