@@ -195,8 +195,8 @@ def test_user_list_view_as_admin(self):
     except Exception as e:
         self.fail(f"An error occurred: {str(e)}")
         self.authenticate(user=self.admin)
-        response = self.client.get(self.user_list_url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+response = self.client.get(self.user_list_url)
+self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_user_list_view_as_user_denied(self):
         # Authenticate as a regular user
