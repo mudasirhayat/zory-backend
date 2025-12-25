@@ -9,6 +9,9 @@ def for_user(cls, user):
     return cls.objects.get(user=user)
         except cls.DoesNotExist:
             return None
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return None
     # Bypass BlacklistMixin for dashboard users
 from rest_framework_simplejwt.tokens import Token
 
