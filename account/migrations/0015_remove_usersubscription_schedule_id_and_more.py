@@ -9,8 +9,12 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='usersubscription',
+try:
+    migrations.RemoveField(
+        model_name='usersubscription',
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
             name='schedule_id',
         ),
         migrations.AddField(
