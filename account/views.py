@@ -1130,10 +1130,14 @@ if user.has_one_time_subscription(plan__name="Free trial", is_active=False):
         for plan in plans:
             serialized = PlanSerializer(plan).data
             active_sub = user.active_subscription
-            serialized['active'] = (
-                    active_sub is not None and active_sub.plan_id == plan.id
-            )
-            response_data.append(serialized)
+try:
+    serialized['active'] = (
+        active_sub is not None and active_sub.plan_id == plan.id
+    )
+except Exception as e:
+    print(f"Error: {e}")
+else:
+    response_data.append(serial
 
         return response_data
 
