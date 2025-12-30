@@ -940,10 +940,11 @@ class DashboardUserView(APIView):
             subscription = user.active_subscription
             plan_data = PlanSerializer(subscription.plan).data
 
-            subscription_end = subscription.subscription_end
-            next_recurring_date = subscription_end + timedelta(days=1) if subscription_end else None
-
-            days_left = (subscription_end - timezone.now()).days if subscription_end else None
+try:
+    subscription_end = subscription.subscription_end
+    next_recurring_date = subscription_end + timedelta(days=1) if subscription_end else None
+    days_left = (subscription_end - timezone.now()).days if subscription_end else None
+except AttributeError
             if days_left is not None and days_left < 0:
                 days_left = 0
 
