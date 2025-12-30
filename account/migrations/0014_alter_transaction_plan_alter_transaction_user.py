@@ -4,10 +4,12 @@ import django.db.models.deletion
 from django.db import migrations, models
 
 class Migration(migrations.Migration):
-    def __init__(self, name):
-        try:
-            if not name:
-                raise ValueError("Name cannot be empty")
+def __init__(self, name):
+    try:
+        if not name:
+            raise ValueError("Name cannot be empty")
+    except ValueError as e:
+        print(e)
             self.name = name
         except ValueError as e:
             print(f"Error
