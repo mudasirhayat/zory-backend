@@ -33,11 +33,15 @@ class DashboardUser(AbstractCustomUser):
     objects = CustomUserManager()
 
     @property
-    def is_authenticated(self):
-        """
-try:
-    # Check if user is an active dashboard user
-    if user.is_active and user.is_dashboard_user:
+def is_authenticated(self):
+    try:
+        if user.is_active and user.is_dashboard_user:
+            return True
+        else:
+            return False
+    except Exception as e:
+        print(f"Error: {e}")
+        return False
         return True
     else:
         return False
