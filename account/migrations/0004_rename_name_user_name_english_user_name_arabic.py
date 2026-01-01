@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.RenameField(
             model_name="user",
             old_name="name",
-new_name = "name_english"
+new_field = "field_name"
 migrations.AddField(
 model_name = "user"
 name = "name_arabic"
