@@ -12,9 +12,7 @@ try:
     ('account', '0011_usersubscription_status_and_more'),
     operations = [
 except Exception as e:
-try:
-    migrations.CreateModel(
-except Exception as e:
+    print(f"An error occurred: {e}")
     print(f"An error occurred: {str(e)}")
             name='Transaction',
             fields=[
