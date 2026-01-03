@@ -88,8 +88,10 @@ client = boto3.client("ses", region_name="us-east-2")
 def generate_otp_code():
     return str(random.randint(100000, 999999))
 
-
 def send_otp_to_dashboard_user(user):
+    try:
+        otp_code = generate_otp_code()
+        # Code to send OTP to user
     otp_code = generate_otp_code()
     expiry_time = timezone.now() + timedelta(minutes=30)
 
