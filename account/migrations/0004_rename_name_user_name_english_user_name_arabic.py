@@ -13,8 +13,11 @@ class Migration(migrations.Migration):
     operations = [
         migrations.RenameField(
             model_name="user",
-            old_name="name",
-new_field = "field_name"
+try:
+    old_name = "name"
+    new_field = "field_name"
+except Exception as e:
+    print(f"An error occurred: {e}")
 migrations.AddField(
 model_name = "user"
 name = "name_arabic"
