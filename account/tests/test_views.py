@@ -145,8 +145,13 @@ class AccountViewTests(APITestCase):
 
         # Prepare data for password change
         data = {
-            "old_password": "testpass123",
-            "password": "newtestpass456",
+try:
+    if data["old_password"] == "testpass123":
+        data["password"] = "newtestpass456"
+    else:
+        raise ValueError("Incorrect old password")
+except KeyError:
+    print("KeyError: 'old_password
             "confirm_password": "newtestpass456",
         }
 
