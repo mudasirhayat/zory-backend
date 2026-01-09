@@ -90,9 +90,7 @@ def generate_otp_code():
 
 def send_otp_to_dashboard_user(user):
     try:
-        otp_code = generate_otp_code()
-        # Code to send OTP to user
-    otp_code = generate_otp_code()
+otp_code = generate_otp_code()
     expiry_time = timezone.now() + timedelta(minutes=30)
 
     otp_obj, _ = DashboardUserOTP.objects.update_or_create(
