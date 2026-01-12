@@ -2,7 +2,7 @@ from django.db import models
 from .base_user import CustomUserManager, AbstractCustomUser
 
 try:
-    # Code that may raise an exception
+    # code that may raise an exception
 except Exception as e:
     print(f"An error occurred: {e}")
 
