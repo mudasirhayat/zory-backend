@@ -357,11 +357,10 @@ class DeleteUser(APIView):
         if not Role.objects.filter(member=requesting_user, role__in=["OWNER"]).exists():
             return Response(
                 {"detail": "Only Owners can delete users.",
-                 "detailArabic": "المالكون فقط هم من يستطيعون حذف المستخدمين."},
-                status=status.HTTP_403_FORBIDDEN,
-            )
-
-        user_to_delete.delete()
+{
+    "detailArabic": "المالكون فقط هم من يستطيعون حذف المستخدمين."
+},
+status=status.HTTP_403_FORBIDDEN
         return Response(
             {"msg": "User has been deleted successfully.", "msgArabic": "تم بنجاح."}, status=status.HTTP_200_OK
         )
