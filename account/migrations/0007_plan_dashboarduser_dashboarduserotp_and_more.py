@@ -16,9 +16,9 @@ class Migration(migrations.Migration):
             name='Plan',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-('name', models.CharField(max_length=50, null=False, blank=False)),
-                ('description', models.CharField(max_length=100, null=False, blank=False)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=8, null
+'name', models.CharField(max_length=50, null=False, blank=False),
+'description', models.CharField(max_length=100, null=False, blank=False),
+'price', models.DecimalField(decimal_places=2, max_digits=8, null=False, blank
                 ('credits', models.IntegerField(default=0)),
                 ('duration_days', models.IntegerField(default=30)),
             ],
