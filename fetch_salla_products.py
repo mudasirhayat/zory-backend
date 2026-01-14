@@ -30,8 +30,13 @@ if resp.status_code != 200:
 else:
     data = resp.json()
         for product in data.get('data', []):
-            if product['is_available']:
-                if product['url'] not in existing_urls:
+try:
+    if product['is_available']:
+        if product['url'] not in existing_urls:
+except KeyError as e:
+    print(f"Error: {e}")
+except Exception as e:
+    print(f"An error occurred:
                     all_products.append({
                         "product_name": product['name'],
                         "image_url": product['main_image'],
