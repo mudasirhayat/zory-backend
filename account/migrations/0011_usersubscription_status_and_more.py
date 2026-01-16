@@ -25,8 +25,11 @@ try:
     name = 'auto_renew'
     field = models.BooleanField()
 except Exception as e:
-print(f"An error occurred: {str(e)}")
-default = False
+try:
+    # Original code
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    default = False
 verbose_name = 'Auto Renewal'
     help_text='Check to enable auto renewal'
 )
