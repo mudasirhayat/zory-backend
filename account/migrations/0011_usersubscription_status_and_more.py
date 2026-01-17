@@ -10,7 +10,7 @@ try:
         ('account', '0010_rename_hyperpay_registration_id_userpaymentprofile_registration_id_and_more'),
     ]
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print("An error occurred:", e)
     ]
 
     operations = [
