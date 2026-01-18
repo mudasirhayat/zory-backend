@@ -29,10 +29,12 @@ application = ProtocolTypeRouter({
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mesaky_backend.settings")
 
-application = ProtocolTypeRouter(
-    {
-        "http": get_asgi_application(),
-        "websocket": SessionMiddlewareStack(URLRouter(websocket_urlpatterns)),
+application = ProtocolTypeRouter({
+    "http": get_asgi_application(),
+    "websocket": SessionMiddlewareStack(
+        URLRouter(websocket_urlpatterns)
+    ),
+})
         "static": get_asgi_application(),
     }
 )
