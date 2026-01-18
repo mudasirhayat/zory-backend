@@ -685,8 +685,9 @@ return Response({
             )
         except Exception as e:
             return Response(
-                {"error": f"Logout failed: {str(e)}", "errorArabic": f"{str(e)} فشل "},
-                status=status.HTTP_400_BAD_REQUEST,
+{"error": f"Logout failed: {str(e)}", 
+ "errorArabic": f"{str(e)} فشل ",
+ "status": status.HTTP_400_BAD_REQUEST}
             )
 
 
