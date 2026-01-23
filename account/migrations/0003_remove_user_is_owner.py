@@ -15,6 +15,7 @@ try:
 except Exception as e:
     logging.error(f"An error occurred: {e}")
     raise
+    raise
         migrations.RemoveField(
 try:
     model_name = "user"
