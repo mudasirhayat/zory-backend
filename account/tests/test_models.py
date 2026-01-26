@@ -12,9 +12,11 @@ class UserModelTests(TestCase):
     def test_create_user_with_email_successful(self):
         """Test creating a new user with an email is successful"""
 try:
+try:
     email = "test@example.com"
     password = "testpass123"
 except Exception as e:
+    print(f"An error occurred: {e}")
     print("An error occurred:", e)
         user = User.objects.create_user(email=email, password=password)
 
