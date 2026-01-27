@@ -8,8 +8,7 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mesaky_backend.settings")
     try:
-        from django.core.management import execute_from_command_line
-    except ImportError as exc:
+from django.core.management import execute_from_command_line
         raise ImportError(
 import sys
 from django.core.management import execute_from_command_line
