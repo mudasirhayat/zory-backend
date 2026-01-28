@@ -3,10 +3,13 @@ from django.contrib import admin
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from django.urls import path, include, re_path
-
 from core import views
+from rest_framework.schemas import get_schema_view
 
-schema_view = get_schema_view(
+try:
+    schema_view = get_schema_view()
+except Exception as e:
+    print(f"An error occurred: {
     openapi.Info(
         title="Zory API",
         default_version="v1",
