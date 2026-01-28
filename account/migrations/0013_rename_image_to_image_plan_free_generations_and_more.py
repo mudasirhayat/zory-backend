@@ -29,7 +29,7 @@ migrations.AddField(
     )
 except Exception as e:
     print(f"An error occurred: {e}")
-            name='allowed_features',
-            field=django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=50), blank=True, default=list, size=None),
+name='allowed_features',
+            field=django.contrib.postgres.fields.ArrayField(base_field=models.CharField(max_length=50), blank=True, default=list, size=None, null=True, blank=True),
         ),
     ]
