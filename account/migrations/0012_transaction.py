@@ -16,9 +16,9 @@ except Exception as e:
     print(f"An error occurred: {str(e)}")
             name='Transaction',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
 ('transaction_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
-('agreement_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
+('agreement_id', models.UUIDField
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('plan', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='account.plan')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='account.dashboarduser')),
