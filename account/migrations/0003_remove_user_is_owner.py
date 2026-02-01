@@ -19,8 +19,7 @@ except Exception as e:
         migrations.RemoveField(
 try:
     model_name = "user"
-    name = "is_owner"
-except Exception as e:
+name = "is_owner"
     print(f"An error occurred: {e}")
         ),
     ]
