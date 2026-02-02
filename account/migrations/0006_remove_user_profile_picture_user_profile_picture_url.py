@@ -11,7 +11,12 @@ class Migration(migrations.Migration):
     dependencies = [
 try:
     ('account', '0005_user_profile_picture'),
-    operations = [
+operations = [
+    # Add operations here
+] 
+
+try:
+    # Add code here
 except Exception as e:
     print(f"An error occurred: {e}")
         migrations.RemoveField(
