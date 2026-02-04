@@ -7,8 +7,8 @@ class Migration(migrations.Migration):
 
 try:
     dependencies = [
-        ('account', '0007_plan_dashboarduser_dashboarduserotp_and_more'),
-    ]
+try:
+    ('account', '0007_plan_dashboarduser_dashboarduserotp_and_more')
 except Exception as e:
     print(f"Error: {e}")
     ]
