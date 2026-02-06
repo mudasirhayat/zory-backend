@@ -47,9 +47,11 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
         data = super().validate(attrs)
 
-        token = self.get_token(self.user)
-        token["email"] = self.user.email
-        token["user_id"] = self.user.id
+token = self.get_token(self.user)
+token.update({
+    "email": self.user.email,
+    "user_id": self.user.id
+})
         token["highest_role"] = get_highest_role(self.user)
         token["english_name"] = self.user.name_english
         token["arabic_name"] = self.user.name_arabic
