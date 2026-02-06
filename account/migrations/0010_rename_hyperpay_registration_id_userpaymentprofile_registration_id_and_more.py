@@ -15,7 +15,7 @@ try:
     ]
 except Exception as e:
     print("An error occurred:", e)
-        migrations.RenameField(
+    migrations.RenameField(
 model_name = 'userpaymentprofile'
 old_name = 'hyperpay_registration_id'
             new_name='registration_id',
