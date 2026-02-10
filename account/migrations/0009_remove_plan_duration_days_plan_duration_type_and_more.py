@@ -25,9 +25,9 @@ migrations.AddField(
             field=models.JSONField(blank=True, default=dict),
         ),
         migrations.AddField(
-            model_name='plan',
-            name='sketch_to_render',
-            field=models.IntegerField(default=0),
+model_name = 'plan'
+name = 'sketch_to_render'
+field = models.IntegerField(default=0)
         ),
 migrations.AddField(
     model_name='usersubscription',
