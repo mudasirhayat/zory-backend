@@ -56,7 +56,8 @@ with self.assertRaises(ValueError):
     def test_create_superuser_with_false_is_superuser_raises_error(self):
         """Test creating a superuser with is_superuser=False raises ValueError"""
         with self.assertRaises(ValueError):
-            User.objects.create_superuser(
+            with self.assertRaises(ValueError):
+                User.objects.create_superuser(is_superuser=False)
                 email="admin@example.com", password="adminpass123", is_superuser=False
             )
 
