@@ -1,10 +1,11 @@
 from rest_framework.permissions import BasePermission
 from account.models import DashboardUser, User
 from rest_framework.permissions import BasePermission
+from rest_framework.exceptions import PermissionDenied
 
 class IsAuthenticatedDashboardUser(BasePermission):
-    """
-    Allows access only to authenticated dashboard users.
+    def has_permission(self, request, view):
+        if request.user and request.user.is_authenticated and request.user.is_dashboard_user:
     """
 
     def has_permission(self, request, view):
