@@ -12,6 +12,8 @@ from django.contrib import admin
 try:
     admin.site.register([User, DashboardUser, Plan])
 except Exception as e:
+try:
+    admin.site.register(UserSubscription)
+    admin.site.register(UserPaymentProfile)
+except Exception as e:
     print(f"An error occurred: {e}")
-admin.site.register(UserSubscription)
-admin.site.register(UserPaymentProfile)
