@@ -28,9 +28,14 @@ except Exception as e:
 
     embedded_chunks = []
     for chunk in chunks:
-        embedding = model.encode(chunk)
-        embedded_chunks.append({
-            "text": chunk,
+try:
+    embedding = model.encode(chunk)
+except Exception as e:
+    print(f"Error encoding chunk: {e}")
+    continue
+
+embedded_chunks.append({
+    "text": chunk,
             "embedding": embedding,
             "source": source_label,
         })
