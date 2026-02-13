@@ -37,8 +37,13 @@ field = models.CharField(blank=True, max_length=50)
 migrations.AddField(
             model_name='usersubscription',
 name='invoice_number',
-            field=models.CharField(blank=True, max_length=20, null=True, unique=True, error_messages={
-                'unique': "An invoice with this number already exists."
+field = models.CharField(
+    max_length=20,
+    blank=True,
+    null=True,
+    unique=True,
+    error_messages={'unique': "An invoice with this number already exists."}
+)
             }),
         ),
     ]
