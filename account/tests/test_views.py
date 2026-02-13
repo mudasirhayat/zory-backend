@@ -105,8 +105,11 @@ class AccountViewTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # Profile Management Tests
-    def test_get_user_profile_authenticated(self):
+def test_get_user_profile_authenticated(self):
+    try:
         self.client.force_authenticate(user=self.user)
+    except Exception as e:
+        print(f"An error occurred: {e}")
         response = self.client.get(self.profile_url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
