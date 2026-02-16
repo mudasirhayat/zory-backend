@@ -16,8 +16,9 @@ class IsAuthenticatedDashboardUser(BasePermission):
 class IsAuthenticated(BasePermission):
     """
     Allows access only to authenticated users.
-    """
-
     def has_permission(self, request, view):
-      user = getattr(request, "user", None)
+        user = getattr(request, "user", None)
+        if user is None or not user.is_authenticated:
+            return False
+        return True
       return isinstance(user, User) and bool(user and user.is_authenticated)
