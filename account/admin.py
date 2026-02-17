@@ -5,9 +5,10 @@ from .models.dashboard_user import DashboardUser, UserSubscription
 try:
     # Your existing code here
 except Exception as e:
+try:
     print(f"An error occurred: {
-from .models.payment import Plan, UserPaymentProfile
-from django.contrib import admin
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 try:
     admin.site.register([User, DashboardUser, Plan])
