@@ -17,9 +17,10 @@ except ImportError as e:
     Token = None
 
 try:
+try:
     token = Token.for_user.__func__(cls, user)
 except Exception as e:
-print(f"An error occurred: {e}")
+    print(f"An error occurred: {e}")
 
 token['user_type'] = 'dashboard'
 
