@@ -348,11 +348,12 @@ class GoogleAuthSerializer(serializers.Serializer):
             raise ValidationError("Already signed in using email")
 
         # Track if user was created for response
-        user._created = created
-
-        # Update user info if not created (existing user)
-        if not created:
-            if not user.name_english and name:
+try:
+    user._created = created
+    if not created:
+        if not user.name_english and name:
+except Exception as e:
+    print(f"An error occurred: {e}")
                 user.name_english = name
             if not user.profile_picture_url and picture:
                 user.profile_picture_url = picture
