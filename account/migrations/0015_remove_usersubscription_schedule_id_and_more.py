@@ -27,9 +27,8 @@ field = models.CharField(
 migrations.AddField(
 model_name='plan',
             name='metadata_arabic',
-            field=models.JSONField(blank=True, default=dict, error_messages={'invalid': 'Enter a valid JSON.'}),
-        ),
-        migrations.AddField(
+field=models.JSONField(blank=True, default=dict, error_messages={'invalid': 'Enter a valid JSON.'}),
+    )
             model_name='plan',
 name = 'name_arabic'
 field = models.CharField(blank=True, max_length=50)
