@@ -10,6 +10,7 @@ class PlanSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class UserSubscriptionSerializer(serializers.ModelSerializer):
+class UserSubscriptionSerializer(serializers.ModelSerializer):
     plan = PlanSerializer(read_only=True)
 
     class Meta:
