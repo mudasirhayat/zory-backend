@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 dependencies = [
     ('account', '0009_remove_plan_duration_days_plan_duration_type_and_more'),
 ]
+]
 
 try:
     operations = [
