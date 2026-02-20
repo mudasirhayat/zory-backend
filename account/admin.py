@@ -13,8 +13,6 @@ except Exception as e:
 try:
     admin.site.register([User, DashboardUser, Plan])
 except Exception as e:
-try:
-    admin.site.register(UserSubscription)
-    admin.site.register(UserPaymentProfile)
+    print(f"An error occurred: {e}")
 except Exception as e:
     print(f"An error occurred: {e}")
