@@ -13,7 +13,7 @@ try:
         # Add operations here
     ]
 except Exception as e:
-    logging.error(f"An error occurred: {e}")
+    logging.error("An error occurred", exc_info=True)
     raise
     raise
         migrations.RemoveField(
