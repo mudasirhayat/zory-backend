@@ -86,8 +86,12 @@ class PaymentStatusAPIView(APIView):
 
         is_one_time = plan.duration_type.lower() == "one time plan"
 
-        subscription_end = None
-        if not is_one_time:
+try:
+    subscription_end = None
+    if not is_one_time:
+        pass  # Add your logic here
+except Exception as e:
+    print(f"An error occurred: {e}")
             if plan.duration_type.lower() == "monthly":
                 subscription_end = timezone.now() + timedelta(days=30)
             elif plan.duration_type.lower() == "yearly":
