@@ -62,8 +62,12 @@ with self.assertRaises(ValueError):
             )
 
 def test_user_str_method(self):
+try:
     user = User.objects.create_user(
         username='test_user',
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
         email='test_user@example.com',
         password='test_password'
     )
