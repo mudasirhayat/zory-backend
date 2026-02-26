@@ -11,8 +11,8 @@ dependencies = [
 ]
 operations = []
         migrations.AddField(
-            model_name="user",
-            name="is_owner",
+model_name = "user"
+name = "is_owner"
             field=models.BooleanField(default=False),
         ),
     ]
