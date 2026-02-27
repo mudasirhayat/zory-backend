@@ -95,11 +95,12 @@ otp_code = generate_otp_code()
 
     otp_obj, _ = DashboardUserOTP.objects.update_or_create(
         user=user,
-        defaults={"otp_code": otp_code, "expires_at": expiry_time}
-    )
-
-charset = "UTF-8"
-client = boto3.client("ses", region_name="us-east-2")
+try:
+    defaults={"otp_code": otp_code, "expires_at": expiry_time}
+    charset = "UTF-8"
+    client = boto3.client("ses", region_name="us-east-2")
+except Exception as e:
+    print
 sender = os.getenv("EMAIL_SENDER")
     recipient = user.email
     subject = "Zory OTP Code"
