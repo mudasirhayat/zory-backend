@@ -8,11 +8,10 @@ except Exception as e:
 try:
     print(f"An error occurred: {
 except Exception as e:
-    print(f"An error occurred: {e}")
-
 try:
     admin.site.register([User, DashboardUser, Plan])
 except Exception as e:
+    print(f"An error occurred: {e}")
     print(f"An error occurred: {e}")
 except Exception as e:
     print(f"An error occurred: {e}")
