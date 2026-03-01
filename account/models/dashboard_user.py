@@ -58,10 +58,10 @@ except:
         return not self.is_active
 
     @property
-    def active_subscription(self):
-      try:
-        return UserSubscription.objects.get(
-          Q(subscription_end__isnull=True) | Q(subscription_end__gte=timezone.now()),
+def active_subscription(self):
+    return UserSubscription.objects.get(
+        Q(subscription_end__isnull=True) | Q(subscription_end__gte=timezone.now())
+    )
           is_active=True,
           user=self
         )
