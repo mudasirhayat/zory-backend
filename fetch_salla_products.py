@@ -40,9 +40,9 @@ except Exception as e:
                     all_products.append({
                         "product_name": product['name'],
                         "image_url": product['main_image'],
-                        "product_url": product['url'],
-                        "price_amount": product['price']['amount'],
-                        "price_unit": product['price']['currency'],
+"product_url": product.get('url'),
+"price_amount": product.get('price', {}).get('amount'),
+"price_unit": product.get('price', {}).get('currency'),
                         "category": product['categories'][0]['name'] if len(product['categories']) >= 1 else None
                     })
                     existing_urls.add(product['url'])
