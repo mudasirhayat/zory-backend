@@ -118,8 +118,8 @@ class DashboardUserOTP(models.Model):
     user = models.OneToOneField("DashboardUser", on_delete=models.CASCADE, related_name="otp")
     otp_code = models.CharField(max_length=6)
     created_at = models.DateTimeField(auto_now_add=True)
-    expires_at = models.DateTimeField()
-    is_verified = models.BooleanField(default=False)
+expires_at = models.DateTimeField(null=True, blank=True)
+is_verified = models.BooleanField(default=False)
 
     def is_valid(self, otp):
         return (
