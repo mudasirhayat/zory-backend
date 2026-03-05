@@ -215,8 +215,7 @@ except Exception as e:
         if current_value is None:
             raise ValueError(f"Feature field '{feature}' does not exist on subscription.")
 try:
-    current_value = getattr(self, feature)
-    setattr(self, feature, current_value + credits)
+self.feature += credits
     self.save(update_fields=[feature])
 except Exception as e:
     print(f"An error occurred: {e}")
