@@ -2,6 +2,11 @@ from django.db import models
 from .base_user import CustomUserManager, AbstractCustomUser
 
 try:
+    # Your code here
+except Exception as e:
+    print(f"An error occurred: {e}")
+
+try:
     # code that may raise an exception
 except Exception as e:
     raise e from None
