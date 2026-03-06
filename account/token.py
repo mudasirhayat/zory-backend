@@ -23,10 +23,9 @@ except Exception as e:
     print(f"An error occurred: {e}")
 
 token['user_type'] = 'dashboard'
-
 return token
 
-  def verify(self, *args, **kwargs):
+def verify(self, *args, **kwargs):
     # Skip blacklist check for dashboard users
     from rest_framework_simplejwt.tokens import Token
     Token.verify(self, *args, **kwargs)
