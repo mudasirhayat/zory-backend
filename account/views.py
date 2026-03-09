@@ -633,6 +633,12 @@ class LogoutView(APIView):
 
     def post(self, request):
         try:
+            logout(request)
+            return Response({"message": "Successfully logged out"}, status=status.HTTP_200_OK)
+        except Exception as
+
+    def post(self, request):
+        try:
             # Get the token from the Authorization header
             auth_header = request.headers.get("Authorization", "")
             if not auth_header.startswith("Bearer "):
