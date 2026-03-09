@@ -54,8 +54,11 @@ name='image_to_image',
             field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-            model_name='usersubscription',
-            name='schedule_id',
+try:
+    model_name = 'usersubscription'
+    name = 'schedule_id'
+except Exception as e:
+    print(f"An error occurred: {e}")
             field=models.CharField(blank=True, max_length=128, null=True),
         ),
         migrations.AddField(
