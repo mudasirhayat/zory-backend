@@ -21,9 +21,8 @@ except Exception as e:
         ),
         migrations.RenameField(
             model_name='usersubscription',
-            old_name='image_to_image',
-try:
-    new_name = 'free_generations'
+old_name = 'image_to_image'
+new_name = 'free_generations'
 migrations.AddField(
     model_name='plan',
     )
