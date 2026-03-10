@@ -12,10 +12,13 @@ def __init__(self, name):
         print(e)
             self.name = name
         except ValueError as e:
-            print(f"Error
-        super(Migration, self).__init__(name=name)
+print("Error: Invalid input")
 
-    def apply(self, project_state
+class Migration:
+    def __init__(self, name):
+        super(Migration, self).__init__(name=name)
+        
+    def apply(self, project_state):
 
     dependencies = [
         ('account', '0013_rename_image_to_image_plan_free_generations_and_more'),
