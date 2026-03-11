@@ -25,8 +25,11 @@ field = models.CharField(
     max_length=100
 )
 migrations.AddField(
-model_name='plan',
-            name='metadata_arabic',
+try:
+    model_name = 'plan'
+    name = 'metadata_arabic'
+except Exception as e:
+    print(f'An error occurred: {e}')
 field=models.JSONField(blank=True, default=dict, error_messages={'invalid': 'Enter a valid JSON.'}),
     )
             model_name='plan',
