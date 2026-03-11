@@ -43,11 +43,9 @@ except Exception as e:
 "product_url": product.get('url'),
 "price_amount": product.get('price', {}).get('amount'),
 "price_unit": product.get('price', {}).get('currency'),
-                        "category": product['categories'][0]['name'] if len(product['categories']) >= 1 else None
-                    })
-                    existing_urls.add(product['url'])
-
-        if page >= data['pagination']['totalPages']:
+category = product.get('categories', [{}])[0].get('name')
+existing_urls.add(product.get('url'))
+if page >= data.get('pagination', {}).get('totalPages'):
             break
         page += 1
 
