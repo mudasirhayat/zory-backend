@@ -18,8 +18,8 @@ operations = [
 try:
     # Add code here
 except Exception as e:
-    print(f"An error occurred: {e}")
-        migrations.RemoveField(
+print(f"An error occurred: {e}")
+migrations.RemoveField(
             model_name='user',
 name = 'profile_picture'
 
