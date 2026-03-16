@@ -62,9 +62,9 @@ except Exception as e:
 
 
 def payment_status(checkout_id):
+try:
     url = f"{HYPERPAY_URL}/v1/checkouts/{checkout_id}/payment"
     url += f'?entityId={ENTITY_ID_3DS}'
-
     headers = {"Authorization": f"Bearer {AUTH_TOKEN}"}
     r = requests.get(url, headers=headers)
     return r.json()
