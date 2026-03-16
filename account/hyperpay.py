@@ -8,9 +8,12 @@ except AttributeError:
     HYPERPAY_URL = None
 ENTITY_ID_3DS = settings.ENTITY_ID_3DS
 ENTITY_ID = settings.ENTITY_ID
-AUTH_TOKEN = settings.AUTH_TOKEN
-
-def initiate_payment(amount, currency, user, billing_info, transaction):
+try:
+    AUTH_TOKEN = settings.AUTH_TOKEN
+    def initiate_payment(amount, currency, user, billing_info, transaction):
+        # Add your code here
+except Exception as e:
+    print(f"An error occurred: {e}")
     url = f"{HYPERPAY_URL}/v1/checkouts"
 
     extra_params = {}
