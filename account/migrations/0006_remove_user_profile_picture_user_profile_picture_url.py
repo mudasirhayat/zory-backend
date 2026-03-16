@@ -8,10 +8,16 @@ class Migration(migrations.Migration):
 
     def apply(self, project_state, schema_editor, collect_sql=False
 
-    dependencies = [
+dependencies = [
+    ('account', '0005_user_profile_picture')
+]
+
 try:
-    ('account', '0005_user_profile_picture'),
-operations = [
+    operations = [
+        # Add your operations here
+    ]
+except Exception as e:
+    print(f"An error occurred: {e}")
     # Add operations here
 ] 
 
