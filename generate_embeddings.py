@@ -31,10 +31,11 @@ except Exception as e:
 try:
     embedding = model.encode(chunk)
 except Exception as e:
+try:
     print(f"Error encoding chunk: {e}")
-    continue
-
-embedded_chunks.append({
+    embedded_chunks.append({})
+except Exception as e:
+    print(f"Error handling: {e}")
     "text": chunk,
             "embedding": embedding,
             "source": source_label,
