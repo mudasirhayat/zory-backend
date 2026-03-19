@@ -21,8 +21,11 @@ migrations.AddField(
         ),
         migrations.AlterField(
 try:
+try:
     model_name = 'usersubscription'
     name = 'auto_renew'
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
     field = models.BooleanField()
 except Exception as e:
 try:
