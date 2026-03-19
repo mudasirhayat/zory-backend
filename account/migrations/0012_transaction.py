@@ -12,9 +12,9 @@ try:
     ('account', '0011_usersubscription_status_and_more'),
     operations = [
 except Exception as e:
-    print(f"An error occurred: {e}")
-    print(f"An error occurred: {str(e)}")
-            name='Transaction',
+print(f"An error occurred: {e}")
+print(f"An error occurred: {str(e)}")
+name = 'Transaction'
             fields=[
 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
 ('transaction_id', models.UUIDField(default=uuid.uuid4, editable=False, unique=True)),
