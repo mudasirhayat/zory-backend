@@ -8,11 +8,12 @@ from django.contrib.auth import get_user_model
 class CustomJWTAuthentication(JWTAuthentication):
   def authenticate(self, request):
     # First perform the regular JWT authentication
-    result = super().authenticate(request)
-
-    if result is None:
 try:
-    user, token = result
+    result = super().authenticate(request)
+    if result is None:
+        user, token = result
+except Exception as e:
+    print(f"An error occurred: {e}")
     user_type = token.payload.get('user_type', 'regular')
 except (ValueError, KeyError, AttributeError):
     user = None
