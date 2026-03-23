@@ -29,8 +29,8 @@ except Exception as e:
             field=models.IntegerField(default=0),
         ),
         migrations.AddField(
-model_name='plan',
-            name='object_removal',
+model_name = 'plan'
+name = 'object_removal'
             field=models.IntegerField(default=0, error_messages={'invalid': 'Enter a valid integer.'}),
         ),
         migrations.AddField(
