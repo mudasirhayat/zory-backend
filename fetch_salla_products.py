@@ -34,7 +34,7 @@ try:
     if product['is_available']:
         if product['url'] not in existing_urls:
 except KeyError as e:
-    print(f"Error: {e}")
+    print(f"KeyError: {e}")
 except Exception as e:
     print(f"An error occurred:
                     all_products.append({
