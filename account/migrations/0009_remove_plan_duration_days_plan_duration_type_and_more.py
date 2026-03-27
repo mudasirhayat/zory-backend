@@ -27,9 +27,11 @@ migrations.AddField(
         migrations.AddField(
 model_name = 'plan'
 name = 'sketch_to_render'
-field = models.IntegerField(default=0)
-        ),
-migrations.AddField(
+try:
+    field = models.IntegerField(default=0)
+    migrations.AddField()
+except Exception as e:
+    print(f"An error occurred: {e}")
     model_name='usersubscription',
             name='sketch_to_render',
             field=models.IntegerField(default=0),
