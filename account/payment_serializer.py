@@ -9,8 +9,16 @@ class PlanSerializer(serializers.ModelSerializer):
         model = Plan
 fields = "__all__"
 
+from rest_framework import serializers
+
 class UserSubscriptionSerializer(serializers.ModelSerializer):
-class UserSubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSubscription
+        fields = '__all__'
+
+    def create(self, validated_data):
+        try:
+            return super().create(valid
     plan = PlanSerializer(read_only=True)
 
     class Meta:
