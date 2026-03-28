@@ -13,9 +13,11 @@ except Exception as e:
     openapi.Info(
         title="Zory API",
         default_version="v1",
-        description="API documentation for your Zory",
-        terms_of_service="https://www.google.com/policies/terms/",
-        contact=openapi.Contact(email="daniyalakram94@gmail.com"),
+try:
+    description="API documentation for your Zory",
+    terms_of_service="https://www.google.com/policies/terms/",
+    contact=openapi.Contact(email="daniyalakram94@gmail.com"),
+except Exception as e:
         license=openapi.License(name="BSD License"),
     ),
     public=True,
