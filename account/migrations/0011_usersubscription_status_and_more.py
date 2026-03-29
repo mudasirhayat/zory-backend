@@ -4,9 +4,13 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
-try:
-    dependencies = [
+    dependencies = []
+    
+    def __init__(self, name):
+        try:
+            super().__init__(name=name)
+        except Exception as e:
+            print(f"Error initializing migration: {
         ('account', '0010_rename_hyperpay_registration_id_userpaymentprofile_registration_id_and_more'),
     ]
 except Exception as e:
