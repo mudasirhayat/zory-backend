@@ -200,11 +200,13 @@ STORAGES = {
     "default": {
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
-            "bucket_name": f"{os.getenv('AWS_STORAGE_BUCKET_NAME')}",
-            "location": "media",
-        },
-    },
-    "staticfiles": {
+try:
+    bucket_name = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    if not bucket_name:
+        raise ValueError("AWS_STORAGE_BUCKET_NAME environment variable is not set")
+except Exception as e:
+    print(f"Error: {e}")
+    sys
         "BACKEND": "storages.backends.s3.S3Storage",
         "OPTIONS": {
             "bucket_name": f"{os.getenv('AWS_STORAGE_BUCKET_NAME')}",
