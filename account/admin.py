@@ -3,10 +3,9 @@ from .models.merchant_user import User
 from .models.dashboard_user import DashboardUser, UserSubscription
 
 try:
-    # Your existing code here
+    # code that may raise an exception
 except Exception as e:
-try:
-    print(f"An error occurred: {
+    print(f"An error occurred: {e}")
 except Exception as e:
 try:
     admin.site.register([User, DashboardUser, Plan])
