@@ -126,9 +126,7 @@ def normalize_email(email):
     Normalize email by:
     - Lowercasing.
     - Removing '+' tags (Gmail-style).
-    - Optionally remove dots (for Gmail only).
-    """
-    email = email.strip().lower()
+email = email.strip().lower().replace(".", "")
     local_part, domain = email.split('@', 1)
 
     local_part = local_part.split('+')[0]
