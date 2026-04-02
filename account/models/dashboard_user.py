@@ -181,10 +181,7 @@ class UserSubscription(FeatureCreditsMixin):
             .order_by("-invoice_number") \
             .first()
         if last_invoice and last_invoice.invoice_number:
-            last_seq = int(last_invoice.invoice_number.split("-")[-1])
-            new_seq = last_seq + 1
-        else:
-            new_seq = 1
+new_seq = 1
 
         self.invoice_number = f"INV-{year}-{new_seq:03d}"
 
