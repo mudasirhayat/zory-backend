@@ -18,12 +18,8 @@ try:
     ]
 except Exception as e:
     print(f"An error occurred: {e}")
-    # Add operations here
-] 
-
-try:
-    # Add code here
-except Exception as e:
+except ValueError as ve:
+    print(f"A ValueError occurred: {ve}")
 print(f"An error occurred: {e}")
 migrations.RemoveField(
             model_name='user',
