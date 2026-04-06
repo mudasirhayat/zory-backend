@@ -21,8 +21,8 @@ migrations.AddField(
         ),
         migrations.AddField(
             model_name='plan',
-            name='metadata',
-            field=models.JSONField(blank=True, default=dict),
+name = 'metadata'
+field = models.JSONField(blank=True, default=dict)
         ),
         migrations.AddField(
 model_name = 'plan'
