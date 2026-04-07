@@ -24,9 +24,12 @@ user.set_password(password)
 
   def create_superuser(self, email, password=None, **extra_fields):
     """
-    Creates and saves a superuser with the given email and password.
-    """
-    extra_fields.setdefault("is_staff", True)
+try:
+    user = User.objects.create_superuser(email, password, **extra_fields)
+except ValueError as ve:
+    print(f"ValueError: {ve}")
+except Exception as e:
+    print(f"An error occurred: {e}")
     extra_fields.setdefault("is_superuser", True)
 
     if extra_fields.get("is_staff") is not True:
