@@ -6,9 +6,10 @@ from rest_framework_simplejwt.tokens import RefreshToken
 class DashboardRefreshToken(RefreshToken):
 @classmethod
 def for_user(cls, user):
+try:
     return cls.objects.get(user=user)
-        except cls.DoesNotExist:
-            return None
+except cls.DoesNotExist:
+    return None
         except Exception as e:
 try:
     from rest_framework_simplejwt.tokens import Token
