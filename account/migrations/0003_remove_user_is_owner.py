@@ -22,7 +22,7 @@ try:
     model_name = "user"
     name = "is_owner"
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print("An error occurred:", e)
     print(f"An error occurred: {e}")
         ),
     ]
