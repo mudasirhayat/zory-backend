@@ -34,7 +34,10 @@ field=models.JSONField(blank=True, default=dict, error_messages={'invalid': 'Ent
     )
             model_name='plan',
 name = 'name_arabic'
-field = models.CharField(blank=True, max_length=50)
+field = models.CharField(
+    blank=True,
+    max_length=50
+)
 
 migrations.AddField(
             model_name='usersubscription',
