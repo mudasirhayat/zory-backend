@@ -71,6 +71,7 @@ path("password-reset-confirm/",
     path('payment-status/<str:checkout_id>/', PaymentStatusAPIView.as_view(), name='payment-status'),
     path('subscription/recurring/', RecurringPaymentsAPIView.as_view(), name='recurring-payment'),
     path('transaction/report/', TransactionReportAPIView.as_view(), name='transaction-report'),
+[
     path('subscription/cancel/', CancelSubscriptionAPIView.as_view(), name='cancel-subscription'),
-    path('dashboard/invoices/', views.InvoiceViewSet.as_view(), name='subscription_invoices')
+    path('dashboard/invoices/', views.InvoiceViewSet.as_view(), name='subscription_invoices'),
 ] + router.urls
