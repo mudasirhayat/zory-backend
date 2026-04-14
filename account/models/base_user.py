@@ -37,11 +37,10 @@ except Exception as e:
     if extra_fields.get("is_superuser") is not True:
       raise ValueError("Superuser must have is_superuser=True.")
 
-    return self.create_user(email, password, **extra_fields)
-
+return self.create_user(email, password, **extra_fields)
 
 class AbstractCustomUser(AbstractBaseUser, PermissionsMixin):
-  name_arabic = models.CharField(max_length=255, null=True, blank=True)
+    name_arabic = models.CharField(max_length=255, null=True, blank=True)
   name_english = models.CharField(max_length=255, null=True, blank=True)
   email = models.EmailField(unique=True)
 is_active = models.BooleanField(default=True, null=False)
