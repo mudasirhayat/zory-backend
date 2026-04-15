@@ -17,8 +17,12 @@ except Exception as e:
     ]
 
 operations = [
+try:
     migrations.AddField(
-            model_name='user',
+        model_name='user',
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
             name='profile_picture',
             field=models.ImageField(blank=True, null=True, upload_to='user_profile/'),
         ),
