@@ -105,8 +105,11 @@ except Exception as e:
 free_generations = plan.free_generations
 subscription_end = subscription_end
 is_active = True
-                auto_renew=not is_one_time,
-                status='Completed'
+try:
+    auto_renew = not is_one_time
+    status = 'Completed'
+except Exception as e:
+    print(f"An error occurred: {e}")
             )
         else:
 
