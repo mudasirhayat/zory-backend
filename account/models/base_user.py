@@ -29,8 +29,8 @@ try:
 except ValueError as ve:
     print(f"ValueError: {ve}")
 except Exception as e:
-    print(f"An error occurred: {e}")
-    extra_fields.setdefault("is_superuser", True)
+print(f"An error occurred: {e}")
+extra_fields.setdefault("is_superuser", True)
 
     if extra_fields.get("is_staff") is not True:
       raise ValueError("Superuser must have is_staff=True.")
