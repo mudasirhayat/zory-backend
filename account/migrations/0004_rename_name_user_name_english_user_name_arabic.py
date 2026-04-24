@@ -14,7 +14,9 @@ except Exception as e:
             model_name="user",
 try:
     old_name = "name"
-    new_field = "field_name"
+new_field = "field_name"
+try:
+    # Code that may raise an exception
 except Exception as e:
     print(f"An error occurred: {e}")
 migrations.AddField(
