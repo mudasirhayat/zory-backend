@@ -15,8 +15,7 @@ class RootResource:
         resp.status = falcon.HTTP_200
         resp.body = json.dumps({'message': 'Hello, World!'})
 
-app.add_route('/', Root
-https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/
+app.add_route('/', Root)
 """
 
 import os
