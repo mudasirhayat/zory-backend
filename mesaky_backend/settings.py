@@ -155,13 +155,7 @@ SIMPLE_JWT = {
     "TOKEN_TYPE_CLAIM": "token_type",
     "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
     "JTI_CLAIM": "jti",
-}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
+    "AUTH_PASSWORD_VALIDATORS": []
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
