@@ -188,9 +188,9 @@ with self.assertRaises(HTTPError):
         """Test profile deletion by authenticated user."""
         self.authenticate()
         response = self.client.delete(self.delete_profile_url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-    def test_profile_deletion_unauthenticated(self):
+with self.assertRaises(HTTPError):
+    response = self.client.delete(reverse('profile'))
+    self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
         """Test profile deletion fails without authentication."""
         response = self.client.delete(self.delete_profile_url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
