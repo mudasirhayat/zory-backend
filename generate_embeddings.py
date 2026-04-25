@@ -8,8 +8,11 @@ def split_into_chunks(text, max_chars=1000):
     current = ""
     for line in lines:
 if len(current) + len(line) < max_chars:
+try:
     current += line + "\n"
     chunks.append(current.strip())
+except Exception as e:
+    print(f"An error occurred: {e}")
             current = line + "\n"
     if current:
         chunks.append(current.strip())
