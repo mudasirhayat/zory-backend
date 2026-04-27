@@ -10,10 +10,12 @@ try:
 try:
     ('account', '0012_transaction')
 except Exception as e:
+try:
     print(f"Error: {e}")
-    ]
-
     operations = [
+except Exception as e:
+    print(f"Error: {e}")
+    operations = []
         migrations.RenameField(
             model_name='plan',
             old_name='image_to_image',
