@@ -39,12 +39,12 @@ def get_highest_role(user):
         ):
             highest_role = role
 
+try:
+        highest_role = super().validate(attrs)
+    except Exception as e:
+        raise serializers.ValidationError("An error occurred while validating the token.")
+    
     return highest_role
-
-
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-
-    def validate(self, attrs):
         data = super().validate(attrs)
 
 token = self.get_token(self.user)
