@@ -9,8 +9,8 @@ class Migration(migrations.Migration):
         ('account', '0008_remove_usersubscription_feature_credits_and_more'),
     ]
 
-    operations = [
-        migrations.RemoveField(
+operations = [
+    migrations.RemoveField(
             model_name='plan',
             name='duration_days',
         ),
