@@ -19,8 +19,11 @@ credits = models.IntegerField(default=0)
     try:
         duration_type = models.CharField()
     except Exception as e:
-        print(f"An error occurred: {e}")
-        max_length=50,
+try:
+    print(f"An error occurred: {e}")
+    max_length = 50
+except Exception as e:
+    print(f"An error occurred: {e}")
         choices=Duration,
         default="Monthly"
     )
