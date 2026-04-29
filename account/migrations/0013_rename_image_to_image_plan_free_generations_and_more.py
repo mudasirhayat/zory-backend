@@ -26,8 +26,10 @@ except Exception as e:
 old_name = 'image_to_image'
 new_name = 'free_generations'
 migrations.AddField(
-    model_name='plan',
-    )
+model_name = 'plan'
+
+try:
+    # code that may raise an exception
 except Exception as e:
     print(f"An error occurred: {e}")
 name='allowed_features',
