@@ -49,8 +49,11 @@ serialize=False,
                 (
                     "groups",
                     models.ManyToManyField(
-                        blank=True,
+blank=True,
 help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
+error_messages={
+    'invalid_choice': "The group is invalid.",
+    'invalid_pk_value': "The group ID
                         related_name="user_set",
 on_delete=models.CASCADE,
                         error_messages={
