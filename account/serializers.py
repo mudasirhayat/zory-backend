@@ -165,10 +165,12 @@ class DashboardUserSerializer(BaseUserSerializer):
         model = DashboardUser
 
     def save(self):
-        del self.validated_data["confirm_password"]
-
-        user = DashboardUser(**self.validated_data)
-        user.set_password(self.validated_data.get("password"))
+try:
+    del self.validated_data["confirm_password"]
+    user = DashboardUser(**self.validated_data)
+    user.set_password(self.validated_data.get("password"))
+except KeyError as e:
+    print(f"KeyError: {e}")
         user.save()
         return user
 
