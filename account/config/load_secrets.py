@@ -1,6 +1,5 @@
 import boto3
 from botocore.exceptions import ClientError
-import boto3
 
 def get_secret(secret_name: str, region_name: str = "us-east-1"):
     session = boto3.session.Session(region_name=region_name)
