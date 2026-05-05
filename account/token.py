@@ -14,12 +14,8 @@ except cls.DoesNotExist:
 try:
     from rest_framework_simplejwt.tokens import Token
 except ImportError as e:
-    print(f"An error occurred: {e}")
-    Token = None
-
-try:
-try:
-    token = Token.for_user.__func__(cls, user)
+print(f"An error occurred: {e}")
+token = cls.for_user(user)
 except Exception as e:
     print(f"An error occurred: {e}")
 
