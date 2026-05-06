@@ -50,11 +50,13 @@ name='DashboardUserOTP',
                 ('otp_code', models.CharField(max_length=6, error_messages={'max_length
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('expires_at', models.DateTimeField()),
-                ('is_verified', models.BooleanField(default=False)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='otp', to='account.dashboarduser')),
-            ],
-        ),
-        migrations.CreateModel(
+('is_verified', models.BooleanField(default=False)),
+('user', models.OneToOneField(
+    on_delete=django.db.models.deletion.CASCADE,
+    related_name='otp',
+    to='account.dashboarduser',
+)),
+migrations.CreateModel(
             name='UserPaymentProfile',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
