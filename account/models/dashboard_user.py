@@ -169,10 +169,8 @@ class UserSubscription(FeatureCreditsMixin):
             user=self.user,
             plan=self.plan,
             plan__duration_type='One Time Plan',
-            status="Completed"
-        )
-
-        if existing.exists():
+if existing.exists():
+    status = "Completed"
             raise ValidationError(f"User has already used a {self.plan.name} plan and cannot purchase it again.")
 
     def get_invoice_number(self):
