@@ -5,8 +5,8 @@ from .models.dashboard_user import DashboardUser, UserSubscription
 try:
     # code that may raise an exception
 except Exception as e:
-except Exception as e:
     print(f"An error occurred: {e}")
+    raise
 
 admin.site.register([User, DashboardUser, Plan])
 except Exception as e:
