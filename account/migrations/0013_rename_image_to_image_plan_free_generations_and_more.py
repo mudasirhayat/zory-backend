@@ -11,8 +11,8 @@ class Migration(migrations.Migration):
     def __init__(self, name):
         try:
             super().__init__(name)
-        except Exception as e:
 except Exception as e:
+    print(f"An error occurred: {e}")
 try:
     print(f"Error: {e}")
     operations = [
