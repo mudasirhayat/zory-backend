@@ -146,8 +146,8 @@ class UserSubscription(FeatureCreditsMixin):
 
     user = models.ForeignKey('DashboardUser', on_delete=models.CASCADE, related_name='subscriptions')
     plan = models.ForeignKey(Plan, on_delete=models.CASCADE)
-    current_credits = models.IntegerField(default=0)
-    subscription_start = models.DateTimeField(auto_now=True)
+current_credits = models.IntegerField(default=0)
+subscription_start = models.DateTimeField(auto_now=True)
     subscription_end = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     auto_renew = models.BooleanField(default=False)
