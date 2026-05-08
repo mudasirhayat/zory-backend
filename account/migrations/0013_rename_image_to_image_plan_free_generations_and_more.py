@@ -4,11 +4,14 @@ import django.contrib.postgres.fields
 from django.db import migrations, models
 
 class Migration(migrations.Migration):
-
-try:
     dependencies = [
-try:
     ('account', '0012_transaction')
+    ]
+
+    def __init__(self, name):
+        try:
+            super().__init__(name)
+        except Exception as e:
 except Exception as e:
 try:
     print(f"Error: {e}")
