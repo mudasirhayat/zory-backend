@@ -4,7 +4,10 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
     def __init__(self, name):
-        super(Migration, self).__init__(name=name)
+        try:
+            super(Migration, self).__init__(name=name)
+        except Exception as e:
+            print(f"Error initializing migration: {e}")
 
     def apply(self, project_state, schema_editor, collect_sql=False
 
