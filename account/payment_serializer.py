@@ -8,10 +8,12 @@ class PlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plan
 fields = "__all__"
-
 from rest_framework import serializers
 
 class UserSubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSubscription
+        fields = "__all__"
     class Meta:
         model = UserSubscription
         fields = '__all__'
