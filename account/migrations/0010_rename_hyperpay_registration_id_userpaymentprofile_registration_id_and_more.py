@@ -19,10 +19,14 @@ except Exception as e:
     migrations.RenameField(
 model_name = 'userpaymentprofile'
 old_name = 'hyperpay_registration_id'
-new_name = 'registration_id'
-
-migrations.RemoveField(
-    model_name='userpaymentprofile',
+try:
+    new_name = 'registration_id'
+    migrations.RemoveField(
+        model_name='userpaymentprofile',
+        name='old_name',
+    )
+except Exception as e:
+    print(f"An error occurred: {e}")
     name='brand',
     )
         ),
