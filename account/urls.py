@@ -20,6 +20,8 @@ from .payment_views import (
 
 app_name = "account"
 
+from rest_framework.routers import DefaultRouter
+
 router = DefaultRouter()
 router.register(r"plans", views.PlanViewSet, basename="plans")
 
