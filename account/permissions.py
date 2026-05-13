@@ -3,6 +3,11 @@ from account.models import DashboardUser, User
 from rest_framework.permissions import BasePermission
 from rest_framework.exceptions import PermissionDenied
 
+try:
+    # Your existing code here
+except Exception as e:
+    raise PermissionDenied from e
+
 class IsAuthenticatedDashboardUser(BasePermission):
     def has_permission(self, request, view):
         if request.user and request.user.is_authenticated and request.user.is_dashboard_user:
