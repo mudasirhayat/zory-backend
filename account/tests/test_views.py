@@ -123,11 +123,10 @@ def test_get_user_profile_authenticated(self):
         self.authenticate()
         data = {"name": "Test User", "phone": "+1234567890"}
         response = self.client.patch(self.profile_url, data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_profile_update_invalid_data(self):
-        # Authenticate the user
-        self.client.login(email="testuser@example.com", password="testpass123")
+def test_profile_update_invalid_data(self):
+    self.client.login(email="testuser@example.com", password="testpass123")
 
         # Invalid data for update
         data = {"name": None, "phone": "invalid-phone"}
