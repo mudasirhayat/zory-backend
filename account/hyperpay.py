@@ -45,9 +45,12 @@ except Exception as e:
         "billing.postcode": billing_info.get("postcode", ""),
 
         # Card-on-file params
-        "standingInstruction.mode": "INITIAL",
-        "standingInstruction.type": "UNSCHEDULED",
-        "standingInstruction.source": "CIT",
+try:
+    "standingInstruction.mode": "INITIAL",
+    "standingInstruction.type": "UNSCHEDULED",
+    "standingInstruction.source": "CIT",
+except Exception as e:
+    print(f"An error occurred: {e}")
         "standingInstruction.recurringType": "STANDING_ORDER",
 
         # Recurring custom params and 3DS for test env
