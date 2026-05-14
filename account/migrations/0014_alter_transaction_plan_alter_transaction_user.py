@@ -35,7 +35,8 @@ try:
     model_name = 'transaction'
     name = 'user'
 except Exception as e:
-    print(f'An error occurred: {e}')
+    logging.error(f'An error occurred: {e}')
+    raise
             field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='account.dashboarduser'),
         ),
     ]
