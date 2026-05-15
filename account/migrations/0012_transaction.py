@@ -7,9 +7,9 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-try:
+dependencies = [
     ('account', '0011_usersubscription_status_and_more'),
+]
     operations = [
 except Exception as e:
 print(f"An error occurred: {e}")
