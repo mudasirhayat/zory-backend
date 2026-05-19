@@ -261,11 +261,10 @@ class SetNewPasswordSerializer(serializers.Serializer):
             uidb64 = attrs.get("uidb64")
 
             if password != confirm_password:
-                raise serializers.ValidationError(
-                    {"confirm_password": "Passwords do not match."}
-                )
-
-            id = force_str(urlsafe_base64_decode(uidb64))
+try:
+    id = force_str(urlsafe_base64_decode(uidb64))
+except (TypeError, ValueError, binascii.Error):
+    raise serializers.ValidationError({"error": "Invalid user ID."})
 
             # Extract user model from serializer context
             user_model = self.context.get('user_model')
