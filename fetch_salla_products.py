@@ -32,8 +32,10 @@ else:
         for product in data.get('data', []):
 try:
     if product['is_available']:
-        if product['url'] not in existing_urls:
-except KeyError as e:
+if 'url' not in product:
+    raise KeyError("URL key not found in product")
+if product['url'] not in existing_urls:
+    # Add your code here for handling the case when the URL is not in existing_urls.
     print(f"KeyError: {e}")
 except Exception as e:
     print(f"An error occurred:
