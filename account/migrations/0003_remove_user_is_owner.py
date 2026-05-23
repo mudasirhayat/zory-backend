@@ -13,13 +13,10 @@ try:
         # Add operations here
     ]
 except Exception as e:
-    logging.error("An error occurred", exc_info=True)
-    raise
-    raise
-        migrations.RemoveField(
-try:
-try:
-    model_name = "user"
+logging.error("An error occurred", exc_info=True)
+migrations.RemoveField(
+    model_name="user"
+)
     name = "is_owner"
 except Exception as e:
     print("An error occurred:", e)
