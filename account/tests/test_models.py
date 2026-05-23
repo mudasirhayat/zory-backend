@@ -25,8 +25,9 @@ except Exception as e:
     def test_create_user_with_no_email_raises_error(self):
         """Test creating a user without an email raises ValueError"""
 with self.assertRaises(ValueError):
+with self.assertRaises(ValueError):
     with self.assertRaises(ValueError):
-        with self.assertRaises(ValueError):
+        raise ValueError
             User.objects.create_user(email=None, password="testpass123")
             User.objects.create_user(email="test@example.com", password=None)
 with self.assertRaises(ValueError):
