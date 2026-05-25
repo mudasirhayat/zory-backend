@@ -12,7 +12,8 @@ class Migration(migrations.Migration):
         try:
             super().__init__(name)
 except Exception as e:
-    print(f"An error occurred: {e}")
+    logging.error(f"An error occurred: {e}")
+    raise
 try:
     print(f"Error: {e}")
 try:
