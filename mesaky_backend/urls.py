@@ -21,8 +21,9 @@ except Exception as e:
         license=openapi.License(name="BSD License"),
     ),
     public=True,
-    permission_classes=(permissions.AllowAny,),
-)
+from rest_framework import permissions
+
+permission_classes = (permissions.AllowAny,)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
