@@ -6,11 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('account', '0008_remove_usersubscription_feature_credits_and_more'),
-    ]
-
+('account', '0008_remove_usersubscription_feature_credits_and_more'),
 operations = [
     migrations.RemoveField(
+        model_name='usersubscription',
+        name='feature_credits',
+    ),
+]
             model_name='plan',
             name='duration_days',
         ),
