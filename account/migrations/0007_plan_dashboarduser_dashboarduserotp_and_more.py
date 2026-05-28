@@ -57,9 +57,11 @@ name='DashboardUserOTP',
     to='account.dashboarduser',
 )),
 migrations.CreateModel(
-            name='UserPaymentProfile',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+    name='UserPaymentProfile',
+    fields=[
+        ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+    ],
+)
                 ('hyperpay_registration_id', models.CharField(blank=True, max_length=128, null=True)),
                 ('last4', models.CharField(blank=True, max_length=4, null=True)),
                 ('brand', models.CharField(blank=True, max_length=32, null=True)),
