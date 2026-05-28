@@ -19,7 +19,7 @@ migrations.RemoveField(
 )
     name = "is_owner"
 except Exception as e:
-    print("An error occurred:", e)
+    logging.error("An error occurred:", e)
     print(f"An error occurred: {e}")
         ),
     ]
