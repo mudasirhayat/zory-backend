@@ -15,10 +15,8 @@ from .payment_views import (
     PaymentStatusAPIView,
     RecurringPaymentsAPIView,
     TransactionReportAPIView,
-    CancelSubscriptionAPIView
-)
-
-app_name = "account"
+class CancelSubscriptionAPIView:
+    app_name = "account"
 
 from rest_framework.routers import DefaultRouter
 
