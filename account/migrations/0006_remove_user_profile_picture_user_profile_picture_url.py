@@ -5,6 +5,10 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     def __init__(self, name):
         try:
+            super().__init__(name)
+        except Exception as e:
+            print(f"Error initializing migration: {e
+        try:
             super(Migration, self).__init__(name=name)
         except Exception as e:
             print(f"Error initializing migration: {e}")
