@@ -37,11 +37,7 @@ class Migration(migrations.Migration):
 ('is_staff', models.BooleanField(default=False)),
                 ('profile_picture_url', models.URLField(blank=True, max_length=1000, null=True)),
                 ('google_auth_enabled', models.BooleanField(default=False)),
-                ('groups', models.ManyToManyField(blank=True, help_text='The groups this dashboard user belongs to.', related_name='dashboard_users', related_query_name='dashboard_user', to='auth.group', verbose_name='groups')),
-                ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this dashboard user.', related_name='dashboard_users', related_query_name='dashboard_user', to='auth.permission', verbose_name='user permissions')),
-            ],
-            options={
-                'abstract': False,
+('groups', models.ManyToManyField(blank=True, help_text='The groups this dashboard user belongs to.', related_name='dashboard_users', related_query_name='dashboard_user', to='auth.group', verbose_name='groups', error_messages={'invalid': "Please
             },
         ),
 migrations.CreateModel(
