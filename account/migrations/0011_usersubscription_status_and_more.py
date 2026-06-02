@@ -6,10 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
     dependencies = []
     
-    def __init__(self, name):
-        try:
-            super().__init__(name=name)
-        except Exception as e:
+def __init__(self, name):
+    try:
+        super().__init__(name=name)
+    except Exception as e:
+        print(f"An error occurred: {e}")
             print(f"Error initializing migration: {
         ('account', '0010_rename_hyperpay_registration_id_userpaymentprofile_registration_id_and_more'),
     ]
