@@ -9,3 +9,7 @@ free_generations = models.IntegerField(default=0)
 
 class Meta:
     abstract = True
+
+    def clean(self):
+        if self.free_generations < 0:
+            raise ValidationError("Free generations cannot be negative.")
