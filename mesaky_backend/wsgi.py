@@ -12,9 +12,8 @@ app = falcon.API()
 
 class RootResource:
     def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.body = json.dumps({'message': 'Hello, World!'})
-
+resp.status = falcon.HTTP_200
+resp.body = json.dumps({'message': 'Hello, World!'})
 app.add_route('/', Root)
 """
 
