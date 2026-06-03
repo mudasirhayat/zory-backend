@@ -7,8 +7,9 @@ from .models.dashboard_user import UserSubscription
 class PlanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Plan
-fields = "__all__"
 from rest_framework import serializers
+
+fields = "__all__"
 
 class UserSubscriptionSerializer(serializers.ModelSerializer):
     class Meta:
