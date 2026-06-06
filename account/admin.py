@@ -10,10 +10,6 @@ except Exception as e:
 
 admin.site.register([User, DashboardUser, Plan])
 except Exception as e:
-try:
-    # Code that may raise an exception
-    pass
-except Exception as e:
     print(f"An error occurred: {e}")
 except Exception as e:
     print(f"An error occurred: {e}")
