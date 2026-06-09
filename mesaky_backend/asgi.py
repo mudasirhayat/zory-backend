@@ -14,8 +14,9 @@ import sys
 
 try:
     from django.core.asgi import get_asgi_application
-    from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.routing import ProtocolTypeRouter, URLRouter
 except ImportError as e:
+    print(f"Error importing: {e}")
     print(f"Error importing required modules: {e}")
 import logging
 
