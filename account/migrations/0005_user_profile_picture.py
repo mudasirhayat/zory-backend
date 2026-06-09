@@ -18,8 +18,8 @@ except Exception as e:
 
 operations = [
 try:
-    migrations.AddField(
-        model_name='user',
+migrations.AddField(
+    model_name='user',
     )
 except Exception as e:
     print(f"An error occurred: {e}")
