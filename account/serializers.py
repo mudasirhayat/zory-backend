@@ -139,9 +139,9 @@ class BaseUserSerializer(serializers.ModelSerializer):
         try:
             if not data.get("password") == data.get("confirm_password"):
                 raise serializers.ValidationError({"error": "Password doesn't match"})
-            validate_password(password=data.get("password"))
-            return data
-        except exceptions.ValidationError as e:
+validate_password(password=data.get("password"))
+return data
+except exceptions.ValidationError as e:
             errors = {"password": list(e.messages)}
             raise serializers.ValidationError(errors)
 
