@@ -10,9 +10,10 @@ class Migration(migrations.Migration):
 dependencies = [
     ('account', '0011_usersubscription_status_and_more'),
 ]
+try:
     operations = [
 except Exception as e:
-print(f"An error occurred: {e}")
+    print(f"An error occurred: {e}")
 print(f"An error occurred: {str(e)}")
 name = 'Transaction'
             fields=[
