@@ -24,8 +24,8 @@ except Exception as e:
       }
 
     data = {
-        "entityId": ENTITY_ID_3DS,
-        'amount': amount,
+"entityId": ENTITY_ID_3DS,
+"amount": amount,
         'currency': currency,
         'paymentType': 'DB',
         'integrity': "true",
