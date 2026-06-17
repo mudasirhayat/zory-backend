@@ -45,10 +45,8 @@ serialize=False,
                 ("phone", models.CharField(blank=True, max_length=255, null=True)),
                 ("email", models.EmailField(max_length=254, unique=True)),
                 ("is_active", models.BooleanField(default=True)),
-                ("is_staff", models.BooleanField(default=False)),
-                (
-                    "groups",
-                    models.ManyToManyField(
+("is_staff", models.BooleanField(default=False, null=True)),
+                    models.ManyToManyField(related_name='related_name', null=True, on_delete=models.SET_NULL)
 blank=True,
 help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
 error_messages={
