@@ -54,8 +54,11 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}")
 
-  class Meta:
-    abstract = True
+class Meta:
+    try:
+        abstract = True
+    except Exception as e:
+        print(f"Error: {e}")
 
   def __str__(self):
     return f"{self.name_english}"
