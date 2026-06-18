@@ -10,6 +10,11 @@ except Exception as e:
 
 class IsAuthenticatedDashboardUser(BasePermission):
     def has_permission(self, request, view):
+        if not request.user.is_authenticated:
+            raise PermissionDenied()
+        if not request.user.is_dashboard_user:
+            raise PermissionDenied()
+        return True
         if request.user and request.user.is_authenticated and request.user.is_dashboard_user:
     """
 
