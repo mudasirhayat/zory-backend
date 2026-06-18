@@ -5,10 +5,12 @@ import falcon
 
 class Resource:
     def on_get(self, req, resp):
-        resp.status = falcon.HTTP_200
-        resp.body = 'Hello, world!'
-
-app = falcon.API()
+try:
+    resp.status = falcon.HTTP_200
+    resp.body = 'Hello, world!'
+except Exception as e:
+    resp.status = falcon.HTTP_500
+    resp.body = 'Internal Server Error'
 
 class RootResource:
     def on_get(self, req, resp):
