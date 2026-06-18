@@ -19,8 +19,12 @@ token = cls.for_user(user)
 except Exception as e:
     print(f"An error occurred: {e}")
 
-token['user_type'] = 'dashboard'
-return token
+try:
+    token['user_type'] = 'dashboard'
+except KeyError as e:
+    print(f"Error: {e}")
+finally:
+    return token
 
 def verify(self, *args, **kwargs):
     # Skip blacklist check for dashboard users
