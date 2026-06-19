@@ -8,7 +8,7 @@ try:
     from rest_framework.schemas import get_schema_view
     schema_view = get_schema_view()
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print("An error occurred:", e)
     print(f"An error occurred: {
     openapi.Info(
         title="Zory API",
