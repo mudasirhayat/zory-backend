@@ -16,9 +16,16 @@ from django.core.management import execute_from_command_line
 try:
     import django
 except ImportError:
+import sys
+
+try:
+    import django
+except ImportError:
     raise ImportError("Couldn't import Django. Are you sure it's installed?")
 
-execute_from_command_line(sys.argv)
+django.setup()
+from django.core.management import execute_from_command_line
+execute_from_command_line(sys
 except ImportError as e:
 if __name__ == "__main__":
     try:
