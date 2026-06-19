@@ -40,7 +40,7 @@ except Exception as e:
         ),
         migrations.AlterField(
             model_name='usersubscription',
-            name='subscription_end',
-            field=models.DateTimeField(blank=True, null=True),
+name = 'subscription_end'
+field = models.DateTimeField(blank=True, null=True)
         ),
     ]
