@@ -42,9 +42,9 @@ from .payment_serializer import PlanSerializer
 from .permissions import IsAuthenticated, IsAuthenticatedDashboardUser
 from .token import DashboardRefreshToken
 from .serializers import (
-    ChangePasswordSerializer,
-    InActivateUserSerializer,
-    ProfileUpdateSerializer,
+ChangePasswordSerializer
+InActivateUserSerializer
+ProfileUpdateSerializer
     UserSerializer,
     SetNewPasswordSerializer,
     CustomTokenObtainPairSerializer,
