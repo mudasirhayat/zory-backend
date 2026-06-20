@@ -41,9 +41,14 @@ except Exception as e:
     print(f"An error occurred:
                     all_products.append({
                         "product_name": product['name'],
-                        "image_url": product['main_image'],
-"product_url": product.get('url'),
-"price_amount": product.get('price', {}).get('amount'),
+try:
+    image_url = product['main_image']
+except KeyError:
+    image_url = None
+
+product_url = product.get('url')
+
+price_amount = product.get('price', {}).get('amount')
 "price_unit": product.get('price', {}).get('currency'),
 category = product.get('categories', [{}])[0].get('name')
 existing_urls.add(product.get('url'))
