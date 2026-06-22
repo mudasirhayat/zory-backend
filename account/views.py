@@ -27,7 +27,11 @@ from cryptography.fernet import Fernet
 import json
 from .config.helpers import send_password_reset_email, send_otp_to_dashboard_user, normalize_email
 from .models.merchant_user import User
-from .models.dashboard_user import DashboardUser, DashboardUserOTP, UserSubscription
+from .models.dashboard_user import (
+    DashboardUser,
+    DashboardUserOTP,
+    UserSubscription
+)
 from core.models import (
     Business,
     Invite,
