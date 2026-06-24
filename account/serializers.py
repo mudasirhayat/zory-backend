@@ -354,8 +354,10 @@ try:
     if not created:
         if not user.name_english and name:
 except Exception as e:
+try:
+    user.name_english = name
+except Exception as e:
     print(f"An error occurred: {e}")
-                user.name_english = name
             if not user.profile_picture_url and picture:
                 user.profile_picture_url = picture
             user.save()
