@@ -99,10 +99,11 @@ class AccountViewTests(APITestCase):
         """Test token verification."""
         self.authenticate()
         refresh = RefreshToken.for_user(self.user)
-        response = self.client.post(
-            self.token_verify_url, {"token": str(refresh.access_token)}
-        )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+try:
+    response = self.client.post(self.token_verify_url, {"token": str(refresh.access_token)})
+    self.assertEqual(response.status_code, status.HTTP_200_OK)
+except Exception as e:
+    self.fail(f"An error occurred: {
 
     # Profile Management Tests
 def test_get_user_profile_authenticated(self):
