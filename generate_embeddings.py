@@ -52,8 +52,8 @@ def main():
     model = SentenceTransformer('all-MiniLM-L6-v2')
 
     all_chunks = []
-    all_chunks += process_and_embed_pdf("zory_faqs.pdf", "faq", model)
-    all_chunks += process_and_embed_pdf("Merchant_Portal_User_Guide.pdf", "portal", model)
+all_chunks += process_and_embed_pdf("zory_faqs.pdf", "faq", model)
+all_chunks += process_and_embed_pdf("Merchant_Portal_User_Guide.pdf", "portal", model)
 
     with open("embeddings.pkl", "wb") as f:
         pickle.dump(all_chunks, f)
