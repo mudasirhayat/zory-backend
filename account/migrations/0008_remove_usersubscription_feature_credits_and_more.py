@@ -36,8 +36,8 @@ name = 'object_removal'
         ),
         migrations.AddField(
             model_name='plan',
-            name='text_to_image',
-            field=models.IntegerField(default=0),
+name='text_to_image',
+            field=models.IntegerField(default=0, error_messages={'invalid': 'Please enter a valid integer value.'}),
         ),
         migrations.AddField(
             model_name='usersubscription',
